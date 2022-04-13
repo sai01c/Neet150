@@ -4,3 +4,5 @@
 - If the problem is about frequency, use dictionary.
 - If the problem is about duplicate, use set.
 - Sorted input - binary search
+- For while loop, always make the computation inside the while loop.
+  `while left<right: mid = (left+right)//2`
