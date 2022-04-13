@@ -21,7 +21,7 @@ SC: O(1) no additional space is required
 def findMin(nums):
     left = 0
     right = len(nums) - 1
-    while left < right:
+    while left < right:  # compute the value after the while loop
         mid = (left + right) // 2
         if nums[mid] < nums[right]:
             right = mid
