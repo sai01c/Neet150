@@ -1,0 +1,44 @@
+"""
+https://leetcode.com/problems/spiral-matrix/submissions/
+
+Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [1,2,3,6,9,8,7,4,5]
+
+We have to iterate through the matrix-2d. So, create 4 pointers left, right, top, bottom
+For every while loop you'll iterate through the outermost layer elements
+now to iterate through the outermost layer- create 4 loops in each direction
+left to right, top to bottom and in the reverse directins.
+after each direction increase the pointer by 1 
+
+TC: O(m*n)
+SC: O(1)
+"""
+
+
+def spiral(matrix):
+    left = 0
+    right = len(matrix[0])
+    top = 0
+    bottom = len(matrix)
+    res = []
+
+    while left < right and top < bottom:
+        for i in range(left, right):
+            res.append(matrix[top][i])
+        top += 1
+
+        for i in range(top, bottom):
+            res.append(matrix[i][right-1])
+        right -= 1
+
+        for i in range(right-1, left-1, -1):
+            res.append(matrix[bottom-1][i])
+        bottom -= 1
+
+        for i in range(bottom-1, top-1, -1):
+            res.append(matrix[i][left])
+        left += 1
+    return res
+
+
+print(spiral([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
