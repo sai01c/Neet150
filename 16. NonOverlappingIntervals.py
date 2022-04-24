@@ -15,7 +15,7 @@ Approach: this is similar to merge intervals, first you sort the intervals based
 check if the new interval is less than previous end. 
 then update the prev end based on the condtions
 
-TC: O(n) iterating through the intervals once
+TC: O(nlogn) as we are sorting here
 SC: O(1) creating res variable
 """
 

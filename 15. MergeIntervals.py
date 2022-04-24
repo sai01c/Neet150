@@ -16,6 +16,9 @@ Now, add the first interval and iterate through the rest of them and check if th
 then try to find the max of those two intervals. 
 else, append the interval to the result. 
 
+TC O(nlogn) as we are sorting here
+SC: O(n) we are using a res array.
+
 """
 
 

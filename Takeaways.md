@@ -24,3 +24,7 @@ for r in range(m):
 - For matrices, common approach is to have 4 pointer's- left, right, top, bottom
 - For matrices, when making operations always visulaize row and column and make the changes.
 - comment down the co-ordinates for easy visualization
+- For intervals, most of the cases we sort them. 
+- Easier to use `for start, end in intervals` while iterating over them. 
+
+
