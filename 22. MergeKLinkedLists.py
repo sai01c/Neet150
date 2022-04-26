@@ -16,6 +16,9 @@ Approach: we use the merge 2 lists method
 each iteration we take two lists and append it as 1 to the original lists. 
 repeat until the original lists just has one list
 
+TC: O(n^2)
+SC: O(n)
+
 """
 
 
