@@ -26,5 +26,9 @@ for r in range(m):
 - comment down the co-ordinates for easy visualization
 - For intervals, most of the cases we sort them. 
 - Easier to use `for start, end in intervals` while iterating over them. 
+- For linked lists, `current.next = previous`. Pointer from current node to previous node.
+- `temp = current.next` temp stores the node next to current node. 
+- `slow = slow.next` you are shifting the pointer by one node. 
+- `fast = fast.next.next` you are shifting the pointer by two nodes. 
 
 
