@@ -26,9 +26,13 @@ for r in range(m):
 - comment down the co-ordinates for easy visualization
 - For intervals, most of the cases we sort them. 
 - Easier to use `for start, end in intervals` while iterating over them. 
-- For linked lists, `current.next = previous`. Pointer from current node to previous node.
+- For linked lists, `current.next = previous`. Pointer/direction from current node to previous node.
 - `temp = current.next` temp stores the node next to current node. 
 - `slow = slow.next` you are shifting the pointer by one node. 
 - `fast = fast.next.next` you are shifting the pointer by two nodes. 
-
+- adding or removing elements to the heap O(logn)
+- finding max or min in a heap O(1)
+- if you are looking for uniques, always use set. 
+- Substring problems - sliding window technique. `left, right = 0, for i in range(len(nums))`
+- Set- remove TC O(1)
 
