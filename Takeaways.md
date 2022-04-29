@@ -35,4 +35,6 @@ for r in range(m):
 - if you are looking for uniques, always use set. 
 - Substring problems - sliding window technique. `left, right = 0, for i in range(len(nums))`
 - Set- remove TC O(1)
+- Whenever we have frequency, we need to use dictionary to store the frequency of elements/char.
+- `count[element] = count.get(element, 0) + 1`
 
