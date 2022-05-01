@@ -22,6 +22,7 @@ Sc: O(1) as we only using res to store a number
 
 def countPalinSubstr(s):
     res = 0
+    # doubt as we are doing it for every iteration don't we have the double count. ?
     for i in range(len(s)):
         res += palinSubstr(s, i, i)  # odd case
         res += palinSubstr(s, i, i+1)  # even case

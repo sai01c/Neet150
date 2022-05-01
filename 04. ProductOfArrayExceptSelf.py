@@ -22,7 +22,7 @@ def product(nums):
     res = []
     p = 1
     for i in range(len(nums)):
-        res.append(i)
+        res.append(p)
         p *= nums[i]
 
     p = 1

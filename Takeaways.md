@@ -45,3 +45,4 @@ def palindromicSubstring(s, left, right):
     left -= 1
     right += 1
 ```
+- If nums is the input array, we can directly create a set using set(nums). Again, set is used when we need to find the unique elements. 
