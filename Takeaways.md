@@ -37,4 +37,11 @@ for r in range(m):
 - Set- remove TC O(1)
 - Whenever we have frequency, we need to use dictionary to store the frequency of elements/char.
 - `count[element] = count.get(element, 0) + 1`
-
+- If we want a palindrome, always use two pointers left and right
+- For palindromic substring, always use helper function to calculate from the mid. 
+```
+def palindromicSubstring(s, left, right):
+  while left >= 0 and right < len(s) and s[left] == s[right]:
+    left -= 1
+    right += 1
+```
