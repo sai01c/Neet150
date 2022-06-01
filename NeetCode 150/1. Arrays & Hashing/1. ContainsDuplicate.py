@@ -4,8 +4,9 @@ https://leetcode.com/problems/contains-duplicate/submissions/
 Approach: As this is a unique/duplicate problem, we can use set. Create a set of the given numbers
 and then compare set and num to see any duplicates
 
-Tc: O(n)
-Sc: O(n)
+Tc: O(n) for creating the set of nums
+Sc: O(n) for using set
+len(set) is O(1)
 
 Other Approach: this can be viewed as a frequency problem. 
 Create a dict to get the frequency and check if it is greater than 1
