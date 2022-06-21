@@ -4,7 +4,7 @@ https://leetcode.com/problems/contains-duplicate/submissions/
 Approach: As this is a unique/duplicate problem, we can use set. Create a set of the given numbers
 and then compare set and num to see any duplicates
 
-Tc: O(n) for creating the set of nums
+Tc: O(n) for creating the set of nums as you need to iterate over the elements in nums to create a set. 
 Sc: O(n) for using set
 len(set) is O(1)
 
