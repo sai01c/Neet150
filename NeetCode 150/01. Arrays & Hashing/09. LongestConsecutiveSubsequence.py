@@ -9,6 +9,9 @@ Approach: first create a set of nums (only unique elements)
 then, check if nums-1 is in set
 now this is the current number and implement while loop to increaes the number by 1 and check if it is present in nums
 if yes, increase the streak by 1
+
+Tc: O(n^2)
+Sc: O(n) using set
 """
 
 
