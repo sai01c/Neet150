@@ -4,6 +4,9 @@ https://leetcode.com/problems/valid-sudoku/
 
 `collections.deafultdict(set)` this is a dictionary with set functionality. key is unique. values can be more than one. 
 Example: defaultdict(<class 'set'>, {0: {'5', '7', '3'}, 1: {'5', '9', '1', '6'}, 2: {'9', '8', '6'}})
+
+TC: O(n^2) if problem is matrix min is n^2
+SC: O(n)
 """
 
 import collections
