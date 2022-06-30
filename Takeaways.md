@@ -48,3 +48,4 @@ def palindromicSubstring(s, left, right):
 - If nums is the input array, we can directly create a set using set(nums). Again, set is used when we need to find the unique elements. Time complexity for this operations is O(n) as we need to iterate over nums to create set.
 - `collections.deafultdict(set)` this is a dictionary with set functionality. key is unique. values can be more than one. Example: defaultdict(<class 'set'>, {0: {'5', '7', '3'}, 1: {'5', '9', '1', '6'}, 2: {'9', '8', '6'}}).
 - To sort a string. input "eat". `sortedString = "".join(sorted(input))` sortedString = "aet"
+- Whenever, we have array in two dimensional graph - we use two pointers and increase/decrease the pointers. Eg. Container with most water, trapper rain water. 
