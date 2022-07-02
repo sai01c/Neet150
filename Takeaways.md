@@ -49,3 +49,5 @@ def palindromicSubstring(s, left, right):
 - `collections.deafultdict(set)` this is a dictionary with set functionality. key is unique. values can be more than one. Example: defaultdict(<class 'set'>, {0: {'5', '7', '3'}, 1: {'5', '9', '1', '6'}, 2: {'9', '8', '6'}}).
 - To sort a string. input "eat". `sortedString = "".join(sorted(input))` sortedString = "aet"
 - Whenever, we have array in two dimensional graph - we use two pointers and increase/decrease the pointers. Eg. Container with most water, trapper rain water. 
+- sliding window - have two pointers left and right. Iterate the array using right. Change left based on condition. Used for substring problems, buy and sell stock problems. 
+- `index = ord(s1[i]) - ord('a')` gives the index of the alphabets. Eg- a is 0, b is 1, c is 2, d is 3, z is 25. 
