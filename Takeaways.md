@@ -51,3 +51,4 @@ def palindromicSubstring(s, left, right):
 - Whenever, we have array in two dimensional graph - we use two pointers and increase/decrease the pointers. Eg. Container with most water, trapper rain water. 
 - sliding window - have two pointers left and right. Iterate the array using right. Change left based on condition. Used for substring problems, buy and sell stock problems. 
 - `index = ord(s1[i]) - ord('a')` gives the index of the alphabets. Eg- a is 0, b is 1, c is 2, d is 3, z is 25. 
+- deque inserting deleting the element is O(1)
