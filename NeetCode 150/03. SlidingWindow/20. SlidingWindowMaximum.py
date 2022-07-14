@@ -63,6 +63,7 @@ def slidingWindowMaximum2(nums, k):
         indQ.append(right)
 
         if left > indQ[0]:  # i did not completely understand this
+            # to remove the left value from the queue
             # this is like an out of bounce case- if left is increase but the elements are still in the queue.
             indQ.popleft()
 
