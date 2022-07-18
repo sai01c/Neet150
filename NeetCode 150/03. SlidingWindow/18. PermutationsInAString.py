@@ -35,6 +35,8 @@ def permutations(s1, s2):
         s1count[index] += 1
         index_s2 = ord(s2[i]) - ord('a')
         s2count[index_s2] += 1
+    print("s1count", s1count)
+    print("s2count:", s2count)
 
     left = 0
     for right in range(len(s1), len(s2)):
@@ -56,4 +58,3 @@ def permutations(s1, s2):
 
 
 print(permutations("ab", "eidbaooo"))
-print(permutations("ab", "eidboaoo"))

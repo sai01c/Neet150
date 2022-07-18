@@ -66,6 +66,9 @@ def slidingWindowMaximum2(nums, k):
             # to remove the left value from the queue
             # this is like an out of bounce case- if left is increase but the elements are still in the queue.
             indQ.popleft()
+            """ the above if condition is used in this case
+            Input [1,-1] 1 Output [1,1] Expected [1,-1]
+"""
 
         if right+1 > k:  # we will be shifting the pointer every iteration so every window
             left += 1
