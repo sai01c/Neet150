@@ -23,7 +23,7 @@ def findMin(nums):
     right = len(nums) - 1
     while left < right:  # compute the value after the while loop
         mid = (left + right) // 2
-        if nums[mid] < nums[right]:
+        if nums[mid] < nums[right]:  # compare the value with the right to find if it is rotated
             right = mid
         elif nums[mid] > nums[right]:
             left = mid+1
