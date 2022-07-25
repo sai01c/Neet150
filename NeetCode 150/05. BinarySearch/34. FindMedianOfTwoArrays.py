@@ -3,8 +3,7 @@ Input: nums1 = [1,3], nums2 = [2]
 Output: 2.00000
 """
 
-"""
-this is merge sort approach. time complexity is nlogn but we want logn"""
+"""this is merge sort approach. time complexity is nlogn but we want logn"""
 
 
 class Solution:
