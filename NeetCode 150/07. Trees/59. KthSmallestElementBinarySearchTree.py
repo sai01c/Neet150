@@ -4,8 +4,8 @@ https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 APPROACH: solution available on LC. 
 we inorder traversal and get the elements in ascending order then find the kth element
 
-Tc: O(n)
-
+Tc: O(n) traverse every node once
+Sc: O(n) using array here
 """
 
 
@@ -23,6 +23,8 @@ def inorder(root):
 """
 we can also use iterative inorder using stack 
 
+Tc: O(n) traverse every node once
+Sc: O(n) stack
 """
 
 
@@ -37,4 +39,4 @@ def kthsmalll(root):
         k -= 1
         if k == 0:
             return curr.val
-        curr = curr.next
+        curr = curr.right

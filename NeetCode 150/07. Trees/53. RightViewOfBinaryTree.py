@@ -16,7 +16,7 @@ import collections
 
 
 class Solution:
-    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+    def leftSideView(self, root: Optional[TreeNode]) -> List[int]:
         q = collections.deque()
         q.append(root)
         result = []
