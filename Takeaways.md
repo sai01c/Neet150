@@ -53,3 +53,4 @@ def palindromicSubstring(s, left, right):
 - `index = ord(s1[i]) - ord('a')` gives the index of the alphabets. Eg- a is 0, b is 1, c is 2, d is 3, z is 25. 
 - deque inserting deleting the element is O(1)
 - Use stacks when you want to compare one element with other element. Adding and deleting is also O(1) we can use for this reason
+- Use heaps if you want the largest/smallest element
