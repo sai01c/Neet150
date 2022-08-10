@@ -19,23 +19,20 @@ class Node:
         self.random = random
 
 
-"""
-
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
-        dic = {None:None}
+        dic = {None: None}
         original = head
         while original:
             copy = Node(original.val)
             dic[original] = copy
             original = original.next
-        
+
         original = head
         while original:
             copy = dic[original]
             copy.next = dic[original.next]
             copy.random = dic[original.random]
             original = original.next
-        
+
         return dic[head]
-        """
