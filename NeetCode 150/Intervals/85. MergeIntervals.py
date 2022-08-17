@@ -22,17 +22,19 @@ SC: O(n) we are using a res array.
 """
 
 
-def mergeIntervals(intervals):
-    intervals.sort(key=lambda x: x[0])
-    res = []
-    res.append(intervals[0])
-    for i in range(1, len(intervals)):
-        lastEnd = res[-1][1]
-        if intervals[i][0] <= lastEnd:
-            res[-1][1] = max(lastEnd, intervals[i][1])
-        else:
-            res.append(intervals[i])
-    return res
+class Solution:
+    def merge(self, intervals):
+        intervals.sort(key=lambda x: x[0])
+        res = []
+        res.append(intervals[0])
+        last = res[-1][1]
 
+        for s, e in intervals[1:]:
+            if s <= last:
+                last = max(last, e)
+                res[-1][1] = last
+            else:
+                res.append([s, e])
+                last = e
 
-print(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]))
+        return res
