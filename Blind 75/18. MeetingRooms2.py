@@ -43,3 +43,18 @@ def confRooms(intervals):
 
 print(confRooms([(0, 30), (5, 10), (15, 20)]))
 print(confRooms([(2, 7)]))
+
+
+def func(intervals):
+    intervals.sort(key=lambda x: x[0])
+    last = intervals[0][1]
+    res = 1
+    for s, e in intervals[1:]:
+        if s < last:
+            res += 1
+        last = e
+    return res
+
+
+print(func([(0, 30), (5, 10), (15, 20)]))
+print(func([(2, 7)]))
