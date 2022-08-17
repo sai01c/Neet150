@@ -27,8 +27,10 @@ def NonOverlap(intervals):
     for start, end in intervals[1:]:
         if start < prevEnd:
             res += 1
+            # here we want to remove minimum intervals. so
             prevEnd = min(end, prevEnd)
-        else:
+            # if we have min end that means max intervals can be there and min intervals can be removed
+        else:  # we just update the end for non overlapping ones
             prevEnd = end
     return res
 
