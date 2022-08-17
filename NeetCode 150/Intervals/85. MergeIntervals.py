@@ -30,10 +30,10 @@ class Solution:
         last = res[-1][1]
 
         for s, e in intervals[1:]:
-            if s <= last:
+            if s <= last:  # if they overlap find the max and update the res with max
                 last = max(last, e)
                 res[-1][1] = last
-            else:
+            else:  # if they don't overlap add the interval and update the last
                 res.append([s, e])
                 last = e
 
