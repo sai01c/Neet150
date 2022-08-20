@@ -11,7 +11,7 @@ left to right, top to bottom and in the reverse directins.
 after each direction increase the pointer by 1 
 
 TC: O(m*n)
-SC: O(1)
+SC: O(n)
 """
 
 
