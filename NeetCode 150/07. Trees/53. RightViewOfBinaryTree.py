@@ -54,6 +54,48 @@ class Solution:
         return result
 
 
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        q = collections.deque()
+        res = []
+        q.append(root)
+
+        while q:
+            level = []
+            for i in range(len(q)):
+
+                curr = q.popleft()
+                if curr:
+                    level.append(curr.val)
+                    q.append(curr.left)
+                    q.append(curr.right)
+            if level:
+                res.append(level[-1])
+
+        return res
+
+
+class Solution:
+    def leftSideView(self, root: Optional[TreeNode]) -> List[int]:
+        q = collections.deque()
+        res = []
+        q.append(root)
+
+        while q:
+            level = []
+            for i in range(len(q)):
+
+                curr = q.popleft()
+                if curr:
+                    level.append(curr.val)
+                    q.append(curr.left)
+                    q.append(curr.right)
+            if level:
+                res.append(level[0])
+
+        return res
+
+
 """
 for right view- do level order traversal 
 and then after every iteration take the last node and add it to the result
