@@ -14,7 +14,7 @@ Output: [["a"]]
 
 Approach: to have count dictionary in count {key : value} key is the sorted word, values are the anagrams
 so we iterate over the each word check if the anagrams is in count and append it. 
-Tc: O(n) we are iterating over the count dictionary . 
+Tc: O(n logn) we are sorting the strings each iteration
 Sc: O(n) we are using count dictionary
 
 """

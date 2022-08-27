@@ -36,3 +36,15 @@ def valid(s, t):
 
 print(valid("anagram", "nagaram"))
 print(valid("rat", "car"))
+
+
+"""
+Approach: sort them and compare
+TC: O(n logn) for sorting strings
+SC: O(1) 
+
+"""
+
+
+def anagram(s, t):
+    return sorted(s) == sorted(t)
