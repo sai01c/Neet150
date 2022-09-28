@@ -40,7 +40,7 @@ create a heap and add (value, frequency) to the heap
 return the k max frequencies
 multiply by -1 as we want maximum
 
-Tc: O(n) as we are just iterating once. (DOUBT) heapsort? 
+Tc: O(n logn) as we are using heap. to push elements to heap O(nlogn)
 Sc: O(n) using dict and heap
 
 """

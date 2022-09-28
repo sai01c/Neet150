@@ -2,8 +2,9 @@
 https://leetcode.com/problems/valid-sudoku/
 
 
-`collections.deafultdict(set)` this is a dictionary with set functionality. key is unique. values can be more than one. 
+`collections.deafultdict(set)` this is a dictionary with set functionality. values are unique.  
 Example: defaultdict(<class 'set'>, {0: {'5', '7', '3'}, 1: {'5', '9', '1', '6'}, 2: {'9', '8', '6'}})
+this is discussed in DSA repo
 
 we'll be maintaining defaultdict(set) for every row and column and also square. 
 square we can get by //3
