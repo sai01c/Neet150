@@ -43,7 +43,8 @@ def permutations(s1, s2):
         if s1count == s2count:
             return True
 
-        index_r = ord(s2[right]) - ord('a')
+        index_r = ord(s2[right]) - ord('a') 
+        #we increase the right count and decrease the left count to maintain the window size
         s2count[index_r] += 1
 
         index_l = ord(s2[left]) - ord('a')
