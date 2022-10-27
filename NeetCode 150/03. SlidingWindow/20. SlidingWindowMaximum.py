@@ -17,7 +17,7 @@ Window position                Max
 
 
 # this is a brute force solution. Using the basic sliding window concept and finding the maximum element using in-built max function.
-# TC: O(n^2)
+# TC: O(k * (n-k))
 # Sc: O(n) using array
 # Accepted test cases - 35 / 51 test cases passed.
 import collections
@@ -48,7 +48,7 @@ and queue should be decreasing queue.
 
 Now we implement sliding window concept and for every window increase the left and add the highest element from the queue (index 0) 
 
-Tc: O(n) not sure why it is n as we have for and while. 
+Tc: O(n) inside while we are adding and removing element to queue which is O(1) so total O(n)
 deque inserting deleting the element is O(1)
 """
 
@@ -58,11 +58,12 @@ def slidingWindowMaximum2(nums, k):
     indQ = collections.deque()
     res = []
     for right in range(len(nums)):
-        while indQ and nums[right] > nums[indQ[-1]]:
+        while indQ and nums[right] > nums[indQ[-1]]: #accessing is O(1) 
             indQ.pop()  # remove the last element as we are comparing that to the incoming element
-        indQ.append(right)
+        indQ.append(right) #adding and removing element to deque is O(1) 
 
-        if left > indQ[0]:  # i did not completely understand this
+        if left > indQ[0]:  
+            #this is when the window has shifted but queue still has the element from the previous window
             # to remove the left value from the queue
             # this is like an out of bounce case- if left is increase but the elements are still in the queue.
             indQ.popleft()
@@ -74,3 +75,5 @@ def slidingWindowMaximum2(nums, k):
             left += 1
             res.append(nums[indQ[0]])
     return res
+
+
