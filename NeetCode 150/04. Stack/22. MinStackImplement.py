@@ -4,6 +4,9 @@ https://leetcode.com/problems/min-stack/
 Approach: for push and pop operations we can directly use the built-in functions. 
 for minimum and top we can not use the same stack. 
 So, we use a different stack where we push only the minimum values
+
+Tc: O(1)
+Sc: O(n) as using stack
 """
 
 
