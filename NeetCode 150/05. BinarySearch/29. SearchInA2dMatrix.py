@@ -15,14 +15,14 @@ def search2dMatrix(matrix, target):
     t = 0
     b = rows - 1
     while t <= b:
-        m = (t+b) // 2
-        if target < matrix[m][0]:
-            b = m - 1
-        elif target > matrix[m][-1]:
-            t = m + 1
+        midRow = (t+b) // 2
+        if target < matrix[midRow][0]:
+            b = midRow - 1
+        elif target > matrix[midRow][-1]:
+            t = midRow + 1
         else:  # why use break statement here - this condition means element is in the row 'm'
             break
-    midRow = (t+b)//2
+
     l = 0
     r = cols - 1
     while l <= r:
