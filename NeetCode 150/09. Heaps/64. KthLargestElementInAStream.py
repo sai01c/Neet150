@@ -8,11 +8,14 @@ As this is finding kth largest element we need to implement heaps.
 We keep adding elements so we need to make sure our min-heap will only contain k elements 
 that way kth largest element in the orginal array will be the minimum element after removing elements
 then we can pop the head. 
-Eg: original array [1,2,3,4,5] we need to find 3rd largest element. 
-so we remove 2 elements new array [3,4,5] then we can return the head. 
 
-Tc: 
-SC: O(n)
+This approach will work because our k value is fixed. 
+
+Eg: original array [1,2,3,4,5] we need to find 3rd largest element. 
+so we remove 2 elements new array [3,4,5] then we can return the 0th index element. 
+
+Tc: O(logn) for adding and removing elements from the heap. 
+SC: O(n) as we are using heap
 
 """
 import heapq
