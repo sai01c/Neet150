@@ -14,8 +14,8 @@ using heap we can get the first largest and second largest elements.
 if the first and second are different, push the difference to the heap
 continue this process as long as the heap has more than 1 element
 
-TC: 
-Sc: 
+TC: O(n(logn))
+Sc: O(n)
 """
 
 import heapq
@@ -23,17 +23,31 @@ import heapq
 
 def lastStone(stones):
     stones = [-s for s in stones]
-    heapq.heapify(stones)
+    heapq.heapify(stones) #this is O(n)
     while len(stones) > 1:
-        first = heapq.heappop(stones)
+        first = heapq.heappop(stones) #O(logn)
         second = heapq.heappop(stones)
         if first != second:
-            heapq.heappush(stones, first - second)
+            heapq.heappush(stones, first - second) #O(logn)
     # this is because if input is [2,2] both the elements will be popped and stones will be [] so append 0 to stones.
     stones.append(0)
     # appending won't affect our answer because we only need 0th index in other cases.
     return abs(stones[0])
 
+def laststonee(stone):
+    stones = [-s for s in stone]
+    heapq.heapify(stones)
+    while len(stones) > 1:
+        large = heapq.heappop(stones) * -1
+        small = heapq.heappop(stones) * -1
+
+        if large != small:
+            heapq.heappush(stones, small - large) #they did 8 - 7 large - small, but as our heap is negative we are doing small - large
+
+    return -1 * stones[0] if stones else 0
+
+
 
 input = [2, 7, 4, 1, 8, 1]
 print(lastStone(input))
+print(laststonee(input))
