@@ -34,6 +34,7 @@ for r in range(m):
 - finding max or min in a heap O(1)
 - if you are looking for uniques, always use set. 
 - Substring problems - sliding window technique. `left, right = 0, for i in range(len(nums))`
+- Sliding window - have two pointers left and right. Iterate the array using right. Change left based on condition. Used for substring problems, buy and sell stock problems.
 - Set- remove TC O(1)
 - Whenever we have frequency, we need to use dictionary to store the frequency of elements/char.
 - `count[element] = count.get(element, 0) + 1`
@@ -48,9 +49,9 @@ def palindromicSubstring(s, left, right):
 - If nums is the input array, we can directly create a set using set(nums). Again, set is used when we need to find the unique elements. Time complexity for this operations is O(n) as we need to iterate over nums to create set.
 - `collections.deafultdict(set)` this is a dictionary with set functionality. key is unique. values can be more than one. Example: defaultdict(<class 'set'>, {0: {'5', '7', '3'}, 1: {'5', '9', '1', '6'}, 2: {'9', '8', '6'}}).
 - To sort a string. input "eat". `sortedString = "".join(sorted(input))` sortedString = "aet"
-- Whenever, we have array in two dimensional graph - we use two pointers and increase/decrease the pointers. Eg. Container with most water, trapper rain water. 
-- sliding window - have two pointers left and right. Iterate the array using right. Change left based on condition. Used for substring problems, buy and sell stock problems. 
+- Whenever, we have array in two dimensional graph - we use two pointers and increase/decrease the pointers. Eg. Container with most water, trapper rain water.  
 - `index = ord(s1[i]) - ord('a')` gives the index of the alphabets. Eg- a is 0, b is 1, c is 2, d is 3, z is 25. 
 - deque inserting deleting the element is O(1)
 - Use stacks when you want to compare one element with other element. Adding and deleting is also O(1) we can use for this reason
-- Use heaps if you want the largest/smallest element
+- Use heaps if you want the largest/smallest element.
+- Anagram: Use dictionary to store counts/ frequencies. 
