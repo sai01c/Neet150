@@ -1,7 +1,7 @@
 # Takeaways from Blind 75
 
 - Counter is basically a dictionary. In python, dictionary doesn't store the order. So, if you want to sort them copy to a list while sorting it. `sortedCount = sorted(dict.items(), key = lambda x: x[1], reverse = True)`
-- If the problem is about frequency, use dictionary.
+- If the problem is about frequency/ count, use dictionary.
 - If the problem is about duplicate, use set.
 - Sorted input - binary search
 - For while loop, always make the computation inside the while loop.
@@ -37,6 +37,7 @@ for r in range(m):
 - Sliding window - have two pointers left and right. Iterate the array using right. Change left based on condition. Used for substring problems, buy and sell stock problems.
 - Set- remove TC O(1)
 - Whenever we have frequency, we need to use dictionary to store the frequency of elements/char.
+- Anagram: Use dictionary to store counts/ frequencies. 
 - `count[element] = count.get(element, 0) + 1`
 - If we want a palindrome, always use two pointers left and right
 - For palindromic substring, always use helper function to calculate from the mid. 
@@ -54,4 +55,4 @@ def palindromicSubstring(s, left, right):
 - deque inserting deleting the element is O(1)
 - Use stacks when you want to compare one element with other element. Adding and deleting is also O(1) we can use for this reason
 - Use heaps if you want the largest/smallest element.
-- Anagram: Use dictionary to store counts/ frequencies. 
+
