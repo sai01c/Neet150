@@ -9,7 +9,6 @@ TC: O(logn)
 Sc: O(1)
 """
 
-
 def search(nums, target):
     left = 0
     right = len(nums)-1
@@ -26,7 +25,9 @@ def search(nums, target):
 
     if target <= nums[right] and target >= nums[least]:
         left = least
+        right = len(nums) - 1
     else:
+        left = 0
         right = least - 1
 
     while left <= right:
