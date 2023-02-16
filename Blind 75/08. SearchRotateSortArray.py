@@ -1,15 +1,6 @@
 """
 https://leetcode.com/problems/search-in-rotated-sorted-array/
 
-Example 1:
-
-Input: nums = [4,5,6,7,0,1,2], target = 0
-Output: 4
-Example 2:
-
-Input: nums = [4,5,6,7,0,1,2], target = 3
-Output: -1
-
 Pattern: Binary Search as it is sorted
 First, as it is rotated, we need to find the minimum of the array by using binary search. 
 Next, using that minimum element, assign the left and right pointers and apply binary search

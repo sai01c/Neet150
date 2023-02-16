@@ -1,14 +1,12 @@
 """
 https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/
 
-
 Approach: binary search as they are sorted. 
 return the left element as we need the minimum 
 
 TC: O(logn) as it is a binary search
 SC: O(1) no additional space is required
 """
-
 
 def findMin(nums):
     left = 0
