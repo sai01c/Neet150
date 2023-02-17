@@ -8,6 +8,9 @@ breadth will be the difference between left and right.
 breadth is already maximum as left is 0 and right is len-1
 max will be the difference between left and right. 
 and we increase the left and right pointers to try for different lengths and breadths. 
+
+Tc: O(n) only while loop
+Sc: O(1) 
 """
 
 
