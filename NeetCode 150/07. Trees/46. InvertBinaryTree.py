@@ -1,27 +1,22 @@
 """
 https://leetcode.com/problems/invert-binary-tree/
 
-Approach: each iteration we look at the head and invert its children
+Approach: we reverse left and right using temp pointer technique just as in arrays
+now after reversing left and right, we also need to reverse their child so we apply
+recurive function now
 
-In general, they use recursive dfs or iterative bfs for tree. 
-
-Tc: 
-Sc: 
+Tc: since we are visiting all nodes once it is O(n)
+Sc: recursive stack is used here so it is height of binary tree which is O(n) in worst case
 """
 
+def inverTree(root):
+    if not root:
+        return None
+    temp = root.left
+    root.left = root.right
+    root.right = temp
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+    inverTree(root.left)
+    inverTree(root.right)
 
-    def invert(self, root):
-        if not root:
-            return None
-
-        temp = root.left
-        root.left = self.invert(root.right)
-        root.right = self.invert(temp)
-
-        return root
+    return root
