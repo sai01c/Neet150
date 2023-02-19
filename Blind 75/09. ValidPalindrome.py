@@ -1,15 +1,6 @@
 """
 https://leetcode.com/problems/valid-palindrome/
 
-Input: s = "A man, a plan, a canal: Panama"
-Output: true
-Explanation: "amanaplanacanalpanama" is a palindrome.
-Example 2:
-
-Input: s = "race a car"
-Output: false
-Explanation: "raceacar" is not a palindrome.
-
 Approach: this is a palindrome questions so we have to use two pointers
 we need to eliminate non-alphabetical so increase/decresse the pointers whenever you encounter them. 
 next. we need to check is left == right
@@ -18,7 +9,6 @@ TC: O(n) as we are iterating once through the loop
 Sc: O(1) we are using only pointers.
 
 """
-
 
 def isPalindrome(s):
     left = 0
