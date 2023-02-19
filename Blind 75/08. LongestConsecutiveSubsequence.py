@@ -6,7 +6,7 @@ then, check if nums-1 is in set
 now this is the current number and implement while loop to increaes the number by 1 and check if it is present in nums
 if yes, increase the streak by 1
 
-Tc: O(n^2)
+Tc: O(n)
 Sc: O(n) using set
 """
 
@@ -18,7 +18,7 @@ def function1(nums):
         if num-1 not in numSet:
             curr_num = num
             current_streak = 1
-            while num+1 in numSet:
+            while num+1 in numSet: #O(1)
                 current_streak += 1
                 curr_num += 1
                 max_streak = max(current_streak, max_streak)
