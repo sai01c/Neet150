@@ -1,16 +1,6 @@
 """
 https://leetcode.com/problems/longest-repeating-character-replacement/
 
-Input: s = "ABAB", k = 2
-Output: 4
-Explanation: Replace the two 'A's with two 'B's or vice versa.
-Example 2:
-
-Input: s = "AABABBA", k = 1
-Output: 4
-Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
-The substring "BBBB" has the longest repeating letters, which is 4.
-
 Approach: as it is a substring problem, we want to use a sliding window.
 here the condition is we can make k replacements
 we can store the frequency of substring characters using count dictionary

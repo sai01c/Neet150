@@ -1,23 +1,13 @@
 """
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
-Input: s = "abcabcbb"
-Output: 3
-Explanation: The answer is "abc", with the length of 3.
-Example 2:
-
-Input: s = "bbbbb"
-Output: 1
-Explanation: The answer is "b", with the length of 1.
-
 Explanation: this is a substring problem so we need to use sliding window technique. 
 we use a set to keep the unique characters.
 until we have unique we keep removing the left characters. 
 
-TC: O(n^2) as we are using while inside for loop
+TC: O(n) as we are using while inside for loop
 SC: O(n) for set
 """
-
 
 def uniqueSubstring(s):
     left = 0
@@ -34,5 +24,27 @@ def uniqueSubstring(s):
         ans = max(ans, right - left + 1)
     return ans
 
+"""
+Same approach as 1 but instead of using set we are using map and checking if count is more than
+1. Same TC and SC
+"""
 
-print(uniqueSubstring("bbbbb"))
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        left = 0
+        ans = 0
+        count = {}
+        for right in range(len(s)):
+            sub = s[left:right+1]
+            if s[right] in count:
+                count[s[right]] += 1
+            else:
+                count[s[right]] = 1
+                
+            while count[s[right]] > 1:
+                count[s[left]] -= 1
+                left += 1
+            
+            ans = max(ans, right-left+1)
+            
+        return ans
