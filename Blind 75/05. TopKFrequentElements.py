@@ -50,3 +50,8 @@ class Solution:
             res.append(num)
 
         return res
+
+"""
+Follow up O(n) solution
+
+"""
