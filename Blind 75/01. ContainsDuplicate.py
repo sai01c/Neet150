@@ -7,7 +7,7 @@ EXPLANATION:
 Iterate over the values and check if value is more than 1.
 
 TC: 
-1. O(1) for len(set) and len(nums) but O(1) for creating a set from list
+1. O(1) for len(set) and len(nums) but O(n) for creating a set from list
 2. O(n) for iterating over the dictionary
 
 SC:

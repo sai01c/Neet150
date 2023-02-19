@@ -7,9 +7,7 @@ If the difference is in dictionary, return that particular index and the iterati
 
 TC: we are iterating only once so it is O(n)
 SC: we are using a dictionary so it is O(n)
-
 """
-
 
 def twoSum(nums, target):
     seen = {}
