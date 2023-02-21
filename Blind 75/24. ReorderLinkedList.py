@@ -1,9 +1,6 @@
 """
 https://leetcode.com/problems/reorder-list/
 
-Input: head = [1,2,3,4]
-Output: [1,4,2,3]
-
 Approach: divide the linked list into two halves.
 use two pointer slow and fast to find out the mid 
 First half should be normal and second should be reversed. 

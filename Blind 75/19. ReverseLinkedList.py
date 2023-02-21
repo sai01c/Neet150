@@ -1,9 +1,6 @@
 """
 https://leetcode.com/problems/reverse-linked-list/
 
-Input: head = [1,2,3,4,5]
-Output: [5,4,3,2,1]
-
 Approach: this is better understood if written on notes.
 First, we shift the pointer from current to previous. 
 Now, current becomes prev and the actual next (temp) becomes current

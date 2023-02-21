@@ -1,17 +1,6 @@
 """
 https://leetcode.com/problems/merge-k-sorted-lists/
 
-Input: lists = [[1,4,5],[1,3,4],[2,6]]
-Output: [1,1,2,3,4,4,5,6]
-Explanation: The linked-lists are:
-[
-  1->4->5,
-  1->3->4,
-  2->6
-]
-merging them into one sorted list:
-1->1->2->3->4->4->5->6
-
 Approach: we use the merge 2 lists method 
 each iteration we take two lists and append it as 1 to the original lists. 
 repeat until the original lists just has one list

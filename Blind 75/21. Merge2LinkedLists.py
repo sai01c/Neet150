@@ -1,13 +1,6 @@
 """
 https://leetcode.com/problems/merge-two-sorted-lists/
 
-Input: list1 = [1,2,4], list2 = [1,3,4]
-Output: [1,1,2,3,4,4]
-Example 2:
-
-Input: list1 = [], list2 = []
-Output: []
-
 Approach: this is merge sort algorithm. 
 First, we compare the l1 and l2 value and append it to the dummy node. 
 Now, if any of the l1 or l2 are remaining we append the pointer to them. 

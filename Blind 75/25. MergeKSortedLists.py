@@ -1,9 +1,6 @@
 """
 https://leetcode.com/problems/merge-k-sorted-lists/
 
-lists = [[1,4,5],[1,3,4],[2,6]]
-Output: [1,1,2,3,4,4,5,6]
-
 Approach: first we need to use the merge 2 lists method.
 break down the initial lists into 2 each and apply merge2lists method
 now add the merged list into a new list and continue until length of the newly list is only 1

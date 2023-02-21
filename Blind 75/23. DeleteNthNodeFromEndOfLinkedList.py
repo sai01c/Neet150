@@ -1,13 +1,6 @@
 """
 https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/
 
-Input: head = [1,2,3,4,5], n = 2
-Output: [1,2,3,5]
-Example 2:
-
-Input: head = [1], n = 1
-Output: []
-
 Approach: create two pointers left and right
 idea is to have the diff of n+1 between them
 move right by n times 
