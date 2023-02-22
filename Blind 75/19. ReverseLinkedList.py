@@ -6,9 +6,9 @@ First, we shift the pointer from current to previous.
 Now, current becomes prev and the actual next (temp) becomes current
 
 this is an iterative approach, recursive watch video again
-
-TC O(n)
-SC O(n)
+ 
+TC O(n) as we are visiting all the nodes once
+SC O(n) why TODO
 
 """
 
@@ -26,7 +26,7 @@ class Solution:
         while curr:
             temp = curr.next  # storing the variable
             curr.next = prev  # shifting the pointer
-            prev = curr
+            prev = curr #take care about which to assign first prev or curr?
             curr = temp
         return prev
 

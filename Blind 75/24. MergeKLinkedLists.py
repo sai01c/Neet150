@@ -5,17 +5,13 @@ Approach: we use the merge 2 lists method
 each iteration we take two lists and append it as 1 to the original lists. 
 repeat until the original lists just has one list
 
-TC: O(n^2)
+TC: O(n^2) TODO
 SC: O(n)
-
 """
-
-
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-
 
 def mergeKlists(lists):
     if len(lists) == 0:
