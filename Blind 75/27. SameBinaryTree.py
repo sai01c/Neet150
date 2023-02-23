@@ -8,7 +8,7 @@ if val is not equal they are not equal
 if val is equal then left and right must be equal 
 
 Tc: O(n) as you are travesing every node. 
-Sc: 
+Sc: TODO
 
 """
 

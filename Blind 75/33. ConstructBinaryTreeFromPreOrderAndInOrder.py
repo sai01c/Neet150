@@ -9,7 +9,6 @@ the left elements and right elements can be formed using this mid index
 Tc: O(n) traverse every node once
 """
 
-
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val

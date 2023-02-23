@@ -1,8 +1,8 @@
 """
 https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 
-APPROACH: solution available on LC. 
-we inorder traversal and get the elements in ascending order then find the kth element
+APPROACH: we do inorder traversal and get the elements in ascending order
+then find the kth element. Inorder traversal of BST gives sorted array
 
 Tc: O(n) traverse every node once
 Sc: O(n) using array here
@@ -10,15 +10,19 @@ Sc: O(n) using array here
 
 
 def kthSmall(root):
-    return inorder(root)[k-1]
+    self.res = []
+    inorder(root)
+    return res[k-1]
 
 
 def inorder(root):
     if not root:
-        return []  # since we are trying to return array with elements
-    return inorder[root.left] + [root.val] + inorder[root.right]
-    # + here basically adds the elements to a single array
+        return None
+    inorder(root.left)
+    self.res.append(root.val)
+    inorder(root.right)
 
+    return self.res
 
 """
 we can also use iterative inorder using stack 
@@ -26,7 +30,6 @@ we can also use iterative inorder using stack
 Tc: O(n) traverse every node once
 Sc: O(n) stack
 """
-
 
 def kthsmalll(root):
     stack = []

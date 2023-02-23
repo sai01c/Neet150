@@ -11,7 +11,6 @@ Sc: O(n) queue
 
 import collections
 
-
 def levelOrder(root):
     q = collections.deque()
     q.append(root)
