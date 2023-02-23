@@ -8,12 +8,10 @@ Tc: O(n) traverse every node once
 Sc: O(n) using array here
 """
 
-
 def kthSmall(root):
     self.res = []
     inorder(root)
     return res[k-1]
-
 
 def inorder(root):
     if not root:

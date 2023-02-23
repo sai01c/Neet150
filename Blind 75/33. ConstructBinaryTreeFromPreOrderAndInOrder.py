@@ -7,6 +7,7 @@ find the index of this root in the inorder. Now this will be mid.
 the left elements and right elements can be formed using this mid index
 
 Tc: O(n) traverse every node once
+Sc: O(n) stack may be TODO
 """
 
 class TreeNode:
