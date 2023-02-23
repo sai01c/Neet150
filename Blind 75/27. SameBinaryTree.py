@@ -14,10 +14,11 @@ Sc:
 
 
 def sameBinaryTree(p, q):
-    if not p or not q:  # if p == None or q == None: is not working
-        return False  # what's the difference b/w not p and p == None
-    if not p and not q:
+    if not p and not q: #and condition should be checked first as 
+        #or condition can also satisfy and condition
         return True
+    if not p or not q: # 
+        return False  
     if p.val != q.val:
         return False
 
