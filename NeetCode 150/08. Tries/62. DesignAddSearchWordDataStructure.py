@@ -1,26 +1,15 @@
 """
 https://leetcode.com/problems/design-add-and-search-words-data-structure/
 
-Explanation
-WordDictionary wordDictionary = new WordDictionary();
-wordDictionary.addWord("bad");
-wordDictionary.addWord("dad");
-wordDictionary.addWord("mad");
-wordDictionary.search("pad"); // return False
-wordDictionary.search("bad"); // return True
-wordDictionary.search(".ad"); // return True
-wordDictionary.search("b.."); // return True
-
-
 APPROACH: 
-
 adding is similar to adding into the trie data structure. 
 but for searching, here there's a twist, we have . 
 so, while iterating if there is no . then we can do the general search trie data strucure part. 
 but, the tough part here is if there is .
 essentially, what we want to do when there is . => 
 
-for .ad example first iteration we start at . and then we start the recurisve dfs(i+1, child)
+for .ad example first iteration we start at . and 
+then we start the recurisve dfs(i+1, child)
 so now, first child here is b, cur will be at b. i is at 1 so char is "a"
 now, a is there in cur.children (i.e. a and d)
 
