@@ -7,6 +7,8 @@ first, we use dictionary to check if the char is in the node
 we need to create a seperate TrieNode to initiate nodes
 we also use endOfword to mark the end of word- will be used for search and startswith
 
+TC: TODO
+SC: TODO
 """
 
 class TrieNode(): #idea of creating TrieNode with dic and bool is the key here

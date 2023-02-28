@@ -14,6 +14,9 @@ so now, first child here is b, cur will be at b. i is at 1 so char is "a"
 now, a is there in cur.children (i.e. a and d)
 
 this is a sexy problem, revise this many many times. 
+
+TC: 
+SC: TODO
 """
 
 class TrieNode:
