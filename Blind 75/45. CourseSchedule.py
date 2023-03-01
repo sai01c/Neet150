@@ -1,35 +1,20 @@
 """
 https://leetcode.com/problems/course-schedule/
 
-Input: numCourses = 2, prerequisites = [[1,0]]
-Output: true
-Explanation: There are a total of 2 courses to take. 
-To take course 1 you should have finished course 0. So it is possible.
-Example 2:
-
-Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
-Output: false
-Explanation: There are a total of 2 courses to take. 
-To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.
-
 Approach: first, create a dictionary with key as the course and value as the preRequisites for that course
 {0: 1, 1: [2,3]}
 Now, apply dfs for each course. For dfs we use a set and check if already visited
-Next, iterate through all the courses and apply dfs on each course
+Next, iterate through all the courses and apply dfs on each course.
+
+Tc: TODO
+Sc: TODO
 """
 
-from ast import List
-
+import collections
 
 class Solution:
-    def canFinish(self, numCourses: int, pre: List[List[int]]) -> bool:
-        preDic = {}
-        for i in pre:
-            if i[0] not in preDic:
-                preDic[i[0]] = [i[1]]
-            else:
-                preDic[i[0]].append(i[1])
-
+    def canFinish(self, numCourses: int, pre) -> bool:
+        preDic = collections.defaultdict(list)
         visit = set()
 
         def dfs(course):
@@ -43,7 +28,8 @@ class Solution:
                 if not dfs(nei):
                     return False
             visit.remove(course)
-            preDic[course] = []
+            preDic[course] = [] #this is for elimination TLE. 
+            
             return True
 
         # if numCourses is 2 that means courses are 0 and 1

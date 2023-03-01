@@ -1,55 +1,48 @@
 """
 https://leetcode.com/problems/pacific-atlantic-water-flow/
 
-
-APPROACH: we use the generic dfs approach
-we add the condition if height[r][c] < previous height
-
-we apply the dfs approach on all four sides. and then check the two sets for any 
-common points
+APPROACH: 2 sides are pacific, 2 are atlantic. 
+from the pacific sides we start and we check what all can reach these sides
+same with atlantic 2 sides, we start from the end of the grid to the middle and add to
+atlantic. 
+we use traditional dfs
 
 TC: O(m*n)
+Sc: 
 """
 
-
-def pacatl(graph):
-    rows = len(graph)
-    cols = len(graph[0])
+def pacAtl(heights):
+    rows = len(heights)
+    cols = len(heights[0])
     pac = set()
     atl = set()
+    res = []
 
     def dfs(r, c, visit, prevHeight):
-
-        if (r < 0
-            or c < 0
-            or r == rows
-            or c == cols
-                or graph[r][c] < prevHeight
-                or (r, c) in visit):
+        if (r not in range(rows) or
+            c not in range(cols) or 
+            (r,c) in visit or
+            heights[r][c] < prevHeight):
             return
-
-        visit.add((r, c))
-        directions = [[-1, 0], [1, 0], [0, 1], [0, -1]]
+        directions = [[0,1], [-1,0], [0,-1], [1,0]]
+        visit.add((r,c))
         for dr, dc in directions:
-            dfs(r+dr, c+dc, visit, graph[r][c])
-
+            nr, nc = r+dr, c+dc
+            dfs(nr, nc, visit, heights[r][c])
+    #notice we are not removing from set.                                         
     for r in range(rows):
-        dfs(r, 0, pac, graph[r][0])
-        dfs(r, cols-1, atl, graph[r][cols-1])
+        dfs(r, 0, pac, heights[r][0])
+        dfs(r, cols-1, atl, heights[r][cols-1])
 
     for c in range(cols):
-        dfs(0, c, pac, graph[0][c])
-        dfs(rows-1, c, atl, graph[rows-1][c])
+        dfs(0, c, pac, heights[0][c])
+        dfs(rows-1, c, atl, heights[rows-1][c])
 
-    res = []
     for r in range(rows):
         for c in range(cols):
-            if (r, c) in pac and (r, c) in atl:
-                res.append([r, c])
-
-    return res
-
+            if (r,c) in atl and (r,c) in pac:
+                res.append([r,c])
 
 heights = [[1, 2, 2, 3, 5], [3, 2, 3, 4, 4], [
     2, 4, 5, 3, 1], [6, 7, 1, 4, 5], [5, 1, 1, 2, 4]]
-print(pacatl(heights))
+print(pacAtl(heights))

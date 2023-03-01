@@ -3,7 +3,6 @@
 APPROACH: We can use DFS or BFS
 Idea is either dfs or bfs if we have 1 add to visit and check in 4 directions if any of them is 1 we proceed. 
 We quit if all the four sides have zeroes. 
-
 Now we start at 0,0 and apply dfs or bfs. Now we check for the rest 
 
 TC: O(m*n)
