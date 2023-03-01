@@ -28,7 +28,7 @@ class Solution:
             for nei in node.neighbors:
                 # for all the neighbors of the original node
                 copy.neighbors.append(clone(nei))
-            return copy
+            return copy #if all the neighbors are done we just return this node value
         return clone(node) if node else None
 
 
