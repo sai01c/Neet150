@@ -1,17 +1,20 @@
 """
+https://leetcode.com/problems/number-of-islands
 
 APPROACH: We can use DFS or BFS
-Idea is either dfs or bfs if we have 1 add to visit and check in 4 directions if any of them is 1 we proceed. 
+Idea is either dfs or bfs if we have 1 add to visit and check in 4 directions and
+if any of them is 1 we proceed. 
 We quit if all the four sides have zeroes. 
 Now we start at 0,0 and apply dfs or bfs. Now we check for the rest 
 
 TC: O(m*n)
+Sc: 
 """
 import collections
 
 
 class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid) -> int:
         row = len(grid)
         col = len(grid[0])
         visit = set()
@@ -25,7 +28,8 @@ class Solution:
                 x, y = q.popleft()
                 directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
                 for dx, dy in directions:
-                    if (x + dx in range(row)) and (y + dy in range(col)) and (grid[x+dx][y+dy] == "1") and ((x+dx, y+dy) not in visit):
+                    if ((x + dx in range(row)) and (y + dy in range(col)) and (grid[x+dx][y+dy] == "1") 
+                            and ((x+dx, y+dy) not in visit)):
                         q.append((x+dx, y+dy))
                         visit.add((x+dx, y+dy))
 
@@ -39,7 +43,7 @@ class Solution:
 
 
 class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid) -> int:
         if not grid or not grid[0]:
             return 0
 
@@ -55,7 +59,6 @@ class Solution:
                 or (r, c) in visit
             ):
                 return
-
             visit.add((r, c))
             directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
             for dr, dc in directions:
