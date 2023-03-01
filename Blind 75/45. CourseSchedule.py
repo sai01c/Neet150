@@ -20,7 +20,8 @@ class Solution:
         def dfs(course):
             if course in visit:  # cycle exists
                 return False
-            if course not in preDic:  # no prereq for this course
+            if course not in preDic or preDic[course] == []:  
+                # no prereq for this course
                 return True
             # before checking for neighbors we need to add this to set to check for cycle
             visit.add(course)
