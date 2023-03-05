@@ -9,12 +9,12 @@ next iteration we can rob (3+1) or 2
 Tc: O(n)
 Sc: O(1)
 """
-
-def func(nums):
-    prev2, prev = 0, 0
-    for num in nums:
-        curr = max(prev2 + num, prev)
-        prev2 = prev
-        prev = curr
-        ans = max(ans, curr)
-    return ans
+class HouseRobber():
+    def houseRobber1(self, nums):
+        prev2, prev = 0, 0
+        for num in nums:
+            curr = max(prev2 + num, prev)
+            prev2 = prev
+            prev = curr
+            ans = max(ans, curr)
+        return ans
