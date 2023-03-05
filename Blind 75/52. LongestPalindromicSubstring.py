@@ -1,14 +1,6 @@
 """
 https://leetcode.com/problems/longest-palindromic-substring/
 
-Input: s = "babad"
-Output: "bab"
-Explanation: "aba" is also a valid answer.
-Example 2:
-
-Input: s = "cbbd"
-Output: "bb"
-
 Approach: this is a palindromic substrings question so approach is to start from the middle
 and decrease the left and increase the right pointer
 
@@ -16,7 +8,6 @@ Tc: O(n) as we are iterating over the string once
 Sc: O(n) as we are using res for storing the string
 
 """
-
 
 def longpalinsubstr(s):
     res = ""

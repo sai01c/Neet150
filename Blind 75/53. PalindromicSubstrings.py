@@ -1,24 +1,13 @@
 """
+https://leetcode.com/problems/palindromic-substrings/
 
-
-Example 1:
-
-Input: s = "abc"
-Output: 3
-Explanation: Three palindromic strings: "a", "b", "c".
-Example 2:
-
-Input: s = "aaa"
-Output: 6
-Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".
-
-Approach: as this is a palindromic substring question, always use helper function to start from the mid
+Approach: as this is a palindromic substring question, always use helper function to 
+start from the mid
 add those to get the total count.
 
 Tc: O(n) as we are iterating only once
 Sc: O(1) as we only using res to store a number
 """
-
 
 def countPalinSubstr(s):
     res = 0
