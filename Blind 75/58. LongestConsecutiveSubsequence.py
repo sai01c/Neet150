@@ -9,6 +9,9 @@ if the number is greater then we take the max of itself and 1+ that number
 Tc: O(n^2)
 Sc: O(n)
 
+follow - up: nlogn using binary search
+even Neetcode said it is next level
+
 """
 
 def func(nums):
@@ -18,3 +21,5 @@ def func(nums):
             if nums[i] < nums[j]:
                 dp[i] = max(dp[i], 1+dp[j])
     return max(dp)
+
+
