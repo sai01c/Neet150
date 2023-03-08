@@ -3,19 +3,6 @@ https://www.lintcode.com/problem/919/description
 
 Example1
 
-Input: intervals = [(0,30),(5,10),(15,20)]
-Output: 2
-Explanation:
-We need two meeting rooms
-room1: (0,30)
-room2: (5,10),(15,20)
-Example2
-
-Input: intervals = [(2,7)]
-Output: 1
-Explanation: 
-Only need one meeting room
-
 Approach- create two lists for start times and end times. sort them. 
 compare them and increase the count accordingly
 
