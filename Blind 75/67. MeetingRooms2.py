@@ -1,13 +1,13 @@
 """
 https://www.lintcode.com/problem/919/description
 
-Example1
-
 Approach- create two lists for start times and end times. sort them. 
 compare them and increase the count accordingly
 
-"""
+Tc: O(n)
+Sc: O(1)
 
+"""
 
 def confRooms(intervals):
     start = sorted([i[0] for i in intervals])
@@ -24,24 +24,10 @@ def confRooms(intervals):
         else:
             e += 1
             count -= 1
-        res = max(res, count)
+        res = max(res, count) #why max here
     return res
 
 
 print(confRooms([(0, 30), (5, 10), (15, 20)]))
 print(confRooms([(2, 7)]))
 
-
-def func(intervals):
-    intervals.sort(key=lambda x: x[0])
-    last = intervals[0][1]
-    res = 1
-    for s, e in intervals[1:]:
-        if s < last:
-            res += 1
-        last = e
-    return res
-
-
-print(func([(0, 30), (5, 10), (15, 20)]))
-print(func([(2, 7)]))

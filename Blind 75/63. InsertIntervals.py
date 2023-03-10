@@ -1,10 +1,6 @@
 """
 https://leetcode.com/problems/insert-interval/
 
-Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
-Output: [[1,2],[3,10],[12,16]]
-Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
-
 First, we check if the end of new interval is less than start of the ith interval
 next, if the start of the newinterval is more than end of the ith interval
 else, we find the min and max of the newInterval and add it to the result array
