@@ -1,15 +1,6 @@
 """
 https://www.lintcode.com/problem/920/
 
-Input: intervals = [(0,30),(5,10),(15,20)]
-Output: false
-Explanation: 
-(0,30), (5,10) and (0,30),(15,20) will conflict
-
-Input: intervals = [(5,8),(9,15)]
-Output: true
-Explanation: 
-Two times will not conflict 
 
 Approach- First, sort the intervals based on start times. Now check if the i1.start<i0.end
 
@@ -17,7 +8,6 @@ TC: O(nlogn) as we are sorting
 SC:O(1)
 
 """
-
 
 def meeting(intervals):
     intervals.sort(key=lambda x: x[0])
