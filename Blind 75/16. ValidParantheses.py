@@ -1,13 +1,6 @@
 """
 https://leetcode.com/problems/valid-parentheses/
 
-Input: s = "()"
-Output: true
-Example 2:
-
-Input: s = "()[]{}"
-Output: true
-
 Approach: we shall create a dict with close ones as key. 
 we iterate thorough the input and if we get open ones we append to stack 
 if we get close ones we check if dict = stack and pop them 
