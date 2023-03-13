@@ -9,7 +9,6 @@ Sc: O(n) we are using count dictionary
 
 """
 
-
 def group(strs):
     count = {}
     res = []
@@ -26,3 +25,19 @@ def group(strs):
 
 
 print(group(["eat", "tea", "tan", "ate", "nat", "bat"]))
+
+
+def func(strs):
+    dic = defaultdict(list)
+    for string in strs:
+        count = [0] * 26
+        for char in string:
+            count[ord(char) - ord('a')] += 1
+        dic[tuple(count)].append(char)
+
+    return dic.values()
+
+"""
+Tc: O(26n)
+Sc: O(n)
+"""

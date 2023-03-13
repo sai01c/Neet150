@@ -57,3 +57,6 @@ def palindromicSubstring(s, left, right):
 - Use heaps if you want the largest/smallest element.
 - For BST, always think of sorting approaches. They are very similar to Binary Search.
 - For BST, if you do inorder traversal, we get sorted array. 
+- To get Random element from a list - random.choice(array)
+- Instead of creating a frequency dictionary and sorting it, see if you can create an
+array and use index as frequency. This will eliminate sorting the frequency. Eg: if it is frequency of alphabets, you can create an array with index a, b, c, d until z. Eg: Top K frequent elements.
