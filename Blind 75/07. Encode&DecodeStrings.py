@@ -48,38 +48,3 @@ class Solution:
 obj = Solution()
 res = (obj.encode(["lint", "code", "love", "you"]))
 print(obj.decode(res))
-
-
-class Solutionn:
-    """
-    @param: strs: a list of strings
-    @return: encodes a list of strings to a single string.
-    """
-
-    def encode(self, strs):
-        strings = ""
-        for s in strs:
-            strs += str(len(s)) + "#" + s
-        return strings  # "4#lint4#code4#love3#you" this is the res now.
-
-    """
-    @param: str: A string
-    @return: dcodes a single string to a list of strings
-    """
-
-    def decode(self, str):
-        start = 0
-        res = []
-        while start < len(str):
-            end = start
-            while end != "#":
-                end += 1
-            length = str[start:end]
-            res.append(str[end+1: end+1 + length])
-            start = end+length+1
-        return res
-
-
-objj = Solutionn()
-res = (objj.encode(["neet", "code", "love", "you"]))
-print(objj.decode(res))

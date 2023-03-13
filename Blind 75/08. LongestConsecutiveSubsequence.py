@@ -10,7 +10,6 @@ Tc: O(n)
 Sc: O(n) using set
 """
 
-
 def function1(nums):
     numSet = set(nums)
     max_streak = 0

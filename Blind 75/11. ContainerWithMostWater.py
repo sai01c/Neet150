@@ -13,7 +13,6 @@ Tc: O(n) only while loop
 Sc: O(1) 
 """
 
-
 def maxArea(height):
 
     left = 0

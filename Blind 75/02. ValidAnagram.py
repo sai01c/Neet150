@@ -9,9 +9,6 @@ now the count should become zero.
 
 Tc: O(n) as we are iterating over s and t
 Sc: O(n) as we are using a dictionary
-
-Approach 2: create a counter of s and t and compare. this is also O(n)
-this is faster than approach 1.
 """
 
 def valid(s, t):

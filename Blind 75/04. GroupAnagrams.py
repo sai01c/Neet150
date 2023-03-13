@@ -24,9 +24,6 @@ def group(strs):
     return res
 
 
-print(group(["eat", "tea", "tan", "ate", "nat", "bat"]))
-
-
 def func(strs):
     dic = defaultdict(list)
     for string in strs:
