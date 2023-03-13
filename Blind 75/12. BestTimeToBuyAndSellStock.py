@@ -33,9 +33,6 @@ def maxProfit(self, prices: List[int]) -> int:
         
     return ans
 
-print(stock1([7, 1, 5, 3, 6, 4]))
-print(stock1([7, 6, 4, 3, 1]))
-
 """
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 

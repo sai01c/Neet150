@@ -25,7 +25,7 @@ def substringKreplace(s, k):
             # while is used when repeating characters are not allowed.
             count[s[left]] -= 1  # we cut short the substring
             left += 1
-            ans = max(ans, right-left+1)
+        ans = max(ans, right-left+1) #here we need to take the updated left pointer.
     return ans
 
 
