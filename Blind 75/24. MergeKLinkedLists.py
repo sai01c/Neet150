@@ -25,7 +25,8 @@ def mergeKlists(lists):
             mergedLists.append(merge2lists(l1, l2))
         # update the lists after the for loop is completed as we need to check the while condition.
         lists = mergedLists
-    return lists[0]
+    return lists[0] #0th index has the linked list so just return that. 
+
 
 
 def merge2lists(l1, l2):

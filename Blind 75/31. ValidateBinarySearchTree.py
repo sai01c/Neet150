@@ -7,6 +7,7 @@ based on bst condition, node > left and node < right
 now, check if the node.left and node.right is also true. 
 
 Tc: O(n) traverse every node once
+Sc: O(n) recursion stack
 """
 
 

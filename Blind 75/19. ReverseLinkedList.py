@@ -20,7 +20,7 @@ class ListNode:
 
 
 class Solution:
-    def reverse(head: ListNode) -> ListNode:
+    def reverse(self, head: ListNode) -> ListNode:
         curr = head
         prev = None
         while curr:
@@ -33,4 +33,4 @@ class Solution:
 
 obj = Solution()
 head = [2, 3, 4, 5]
-print(obj.reverse(head))  # throwing an error
+(obj.reverse(head))  # throwing an error

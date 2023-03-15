@@ -8,6 +8,7 @@ if val is lesser we need to move right
 greater move to left
 
 Tc: O(n)
+Sc: O(1)
 
 """
 
