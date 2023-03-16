@@ -9,6 +9,7 @@ We use the same height function. But make couple of modifications
 - we also use to check left and right are more than 0 because we might have negative values
 
 Tc: O(n) traverse every node once. 
+Sc: O(n) recursion stack
 """
 
 
@@ -24,6 +25,6 @@ class Solution:
         leftH = max(0, self.height(root.left))
         rightH = max(0, self.height(root.right))
 
-        self.res = max(self.res, leftH + rightH + root.val)
+        self.res = max(self.res, leftH + rightH + root.val) #this is tricky part
 
         return root.val + max(leftH, rightH)

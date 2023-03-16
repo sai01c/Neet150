@@ -7,7 +7,7 @@ find the index of this root in the inorder. Now this will be mid.
 the left elements and right elements can be formed using this mid index
 
 Tc: O(n) traverse every node once
-Sc: O(n) stack may be TODO
+Sc: O(n) stack recursion
 """
 
 class TreeNode:
@@ -18,6 +18,7 @@ class TreeNode:
 
 
 def constructTree(preorder, inorder):
+    if not preorder or inorder: return None
     root = TreeNode(preorder[0])
     mid = inorder.index(preorder[0])
 

@@ -10,11 +10,11 @@ Tc: O(n) we are iterating multiple times but it is n+n+n
 Sc: O(n)
 """
 
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+        
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
         """

@@ -26,7 +26,7 @@ class Codec:
     def serialize(self, root):
         q = collections.deque()
         q.append(root)
-        res = ""
+        res = []
         while q:
             node = q.popleft()
             if node:
@@ -34,12 +34,13 @@ class Codec:
                 q.append(node.right)
                 res += str(node.val)
             else:
-                res += "N"
+                res.append("N")
 
-        return res
+        return ",".join(res) #array as a string 
     
     def deserialize(self, data):
         if data == "N": return
+        data = data.split(",") #string to array
         q = collections.deque()
         root = TreeNode(data[0])
         q.append(root)

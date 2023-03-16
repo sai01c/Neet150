@@ -4,8 +4,8 @@ https://leetcode.com/problems/word-search/
 approach: we use dfs and add index to this dfs. We iterate in four directions and 
 check for the next index if they are equal we proceed further
 
-Tc: 
-Sc: 
+Tc: O(m * n * dfs) dfs - 4^ len(word)
+Sc: O(n)
 
 """
 def wordSearch(board, word):
@@ -28,10 +28,10 @@ def wordSearch(board, word):
             if dfs(nr, nc, i+1):
                 return True
 
-        visit.remove((r,c))
+        visit.remove((r,c)) #we are removing becuase we can't use same letter more than once
 
     for r in rows:
-        for c in cols:
+        for c in cols: #tc - O(m*n) for these two loops
             if dfs(r, c, 0):
                 return True
     return False

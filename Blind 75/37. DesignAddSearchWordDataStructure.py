@@ -38,9 +38,9 @@ class WordDictionary:
         curr.endOfWord = True
 
     def search(self, word: str) -> bool:
-        curr = self.root
+        
         def dfs(index, TrieNode):
-            curr = TrieNode #iniatiate the curr at this Trienode
+            curr = TrieNode #initiate the curr at this Trienode
             for i in range(index, len(word)):
                 char = word[i]
                 if char == ".": #we skip to next i value and next series of Trienodes
@@ -54,4 +54,5 @@ class WordDictionary:
                     curr = curr.child[char]
             return curr.endOfWord
         
-        return dfs(0, curr)
+        curr = self.root #initiating curr pointer at initial trienode
+        return dfs(0, curr) #running dfs on initial trienode

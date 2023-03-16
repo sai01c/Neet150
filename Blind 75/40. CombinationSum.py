@@ -4,15 +4,16 @@ https://leetcode.com/problems/combination-sum/
 Approach: this is backtracking problem, we need to represent in state-space tree
 For every tree we have two decisions - add the node, don't add the node.
 
-Tc: 
-Sc:
+Tc: 2^target - height of the binary tree
+Sc: O(n)
 """
 
 def combinationSum(candidates, target):
     res = []
     def dfs(curr, total, ind):
         if total == target:
-            res.append(curr.copy())
+            res.append(curr.copy()) #why copy? 
+            #we are just using 1 variable and we continue to modify it.
             return
         if total > target or ind >= len(candidates):
             return

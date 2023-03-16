@@ -48,10 +48,3 @@ class Trie:
                 return False
             curr = curr.child[char]
         return True  # we just want starts with so its just True
-
-
-# Your Trie object will be instantiated and called as such:
-# obj = Trie()
-# obj.insert(word)
-# param_2 = obj.search(word)
-#
