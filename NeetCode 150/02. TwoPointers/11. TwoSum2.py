@@ -1,10 +1,6 @@
 """
 https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 
-Input: numbers = [2,7,11,15], target = 9
-Output: [1,2]
-Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
-
 Approach: Here, it is mentioned that numbers are in sorted order. 
 So, we can have two pointers and increase/decrease the pointers based on target
 

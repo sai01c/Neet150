@@ -60,3 +60,4 @@ def palindromicSubstring(s, left, right):
 - To get Random element from a list - random.choice(array)
 - Instead of creating a frequency dictionary and sorting it, see if you can create an
 array and use index as frequency. This will eliminate sorting the frequency. Eg: if it is frequency of alphabets, you can create an array with index a, b, c, d until z. Eg: Top K frequent elements.
+- Sorted array - always try two pointer approach.

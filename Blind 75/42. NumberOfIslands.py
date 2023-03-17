@@ -7,8 +7,8 @@ if any of them is 1 we proceed.
 We quit if all the four sides have zeroes. 
 Now we start at 0,0 and apply dfs or bfs. Now we check for the rest 
 
-TC: O(m*n)
-Sc: 
+TC: O(m*n*dfs)
+Sc: O(n)
 """
 import collections
 
@@ -56,7 +56,7 @@ class Solution:
                 r not in range(rows)
                 or c not in range(cols)
                 or grid[r][c] == "0"
-                or (r, c) in visit
+                or (r, c) in visit #else TLE
             ):
                 return
             visit.add((r, c))
@@ -66,7 +66,8 @@ class Solution:
 
         for r in range(rows):
             for c in range(cols):
-                if grid[r][c] == "1" and (r, c) not in visit:
+                if grid[r][c] == "1" and (r, c) not in visit: #we did not remove from visit after done visiting
+                    #we dont want to visit another (r,c) which is already part of prev island
                     islands += 1
                     dfs(r, c)
         return islands

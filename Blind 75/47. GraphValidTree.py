@@ -1,9 +1,5 @@
 """
-Premium question - find on LintCode
-Given n nodes labeled from 0 to n - 1 and a list of undirected edges (each edge is a pair of nodes), 
-write a function to check whether these edges make up a valid tree
-Input: n = 5 edges = [[0, 1], [0, 2], [0, 3], [1, 4]]
-Output: true.
+https://www.lintcode.com/problem/178/
 
 Approach - Basically, the graph has to be connected and acyclic to be a tree. 
 cyclic - we can run dfs and use parent to eliminate edge case of undirected graph.

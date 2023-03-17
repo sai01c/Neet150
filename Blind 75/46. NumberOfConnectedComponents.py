@@ -7,8 +7,10 @@ difficulty part of the question is how input is formatted
 Basically, we do dfs and add nodes to visit set for all the connecting nodes. 
 At the end we iterate and run dfs on nodes that are not in visit
 
-Tc: 
-Sc: 
+this is similar to number of islands
+
+Tc: N * DFS - TODO
+Sc: O(n)
 """
 
 class Solution:
@@ -23,6 +25,8 @@ class Solution:
                 if isConnected[node-1][i] == 1: #we have an edge for these nodes
                     dfs(i+1) 
         #from one node we get all the connected nodes to the set.     
+        
+        
         for node in range(1, len(isConnected) + 1):
             if node not in visit: #nodes not in visit means not connected
                 dfs(node)

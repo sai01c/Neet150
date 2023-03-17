@@ -7,8 +7,8 @@ same with atlantic 2 sides, we start from the end of the grid to the middle and 
 atlantic. 
 we use traditional dfs
 
-TC: O(m*n)
-Sc: 
+TC: O(m*n) TODO
+Sc: O(n)
 """
 
 def pacAtl(heights):

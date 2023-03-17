@@ -6,8 +6,8 @@ Approach: first, create a dictionary with key as the course and value as the pre
 Now, apply dfs for each course. For dfs we use a set and check if already visited
 Next, iterate through all the courses and apply dfs on each course.
 
-Tc: TODO
-Sc: TODO
+Tc: O() TODO
+Sc: O(n) dic
 """
 
 import collections
@@ -15,6 +15,8 @@ import collections
 class Solution:
     def canFinish(self, numCourses: int, pre) -> bool:
         preDic = collections.defaultdict(list)
+        for k, v in pre: #adding to the dictionary
+            preDic[k].append(v)
         visit = set()
 
         def dfs(course):

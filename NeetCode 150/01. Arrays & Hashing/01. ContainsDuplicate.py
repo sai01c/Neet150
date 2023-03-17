@@ -1,38 +1,38 @@
 """
 https://leetcode.com/problems/contains-duplicate/submissions/
 
-Approach: As this is a unique/duplicate problem, we can use set. Create a set of the given numbers
-and then compare set and num to see any duplicates
+EXPLANATION: 
+1. First approach is to create a set of nums and compare the length of set and nums. 
+2. Create a dictionary with frequency of the nums. 
+Iterate over the values and check if value is more than 1.
 
-Tc: O(n) for creating the set of nums as you need to iterate over the elements in nums to create a set. 
-Sc: O(n) for using set
-len(set) is O(1)
+TC: 
+1. O(1) for len(set) and len(nums) but O(n) for creating a set from list
+2. O(n) for iterating over the dictionary
 
-Other Approach: this can be viewed as a frequency problem. 
-Create a dict to get the frequency and check if it is greater than 1
-
-Tc: O(n)
-Sc: O(n)
+SC:
+1. O(n) for set
+2. O(n) for dictionary
 """
 
 
+from collections import Counter
+
+
 def duplicate(nums):
-    count = {}
-    for num in nums:
-        count[num] = count.get(num, 0) + 1
-    for val in count.values():
-        if val > 1:
-            return True
-    return False
-
-
-def duplicateset(nums):
-    nums_set = set(nums)
-    if len(nums_set) != len(nums):
+    if len(set(nums)) < len(nums): #set(nums) is O(n) as we are creating a set here.
         return True
     return False
 
 
-nums = [1, 2, 3, 4, 1]
-print(duplicate(nums))
-print(duplicateset(nums))
+def duplicate1(nums):
+    count = Counter(nums)
+    for value in count.values():  # here we don't want to sort them by frequency.
+        if value > 1:  # We just need to know if any of those has frequency of more than 1
+            # so, we didn't copy the dict to a list. we iterate over the dict only.
+            return True
+    return False
+
+
+print(duplicate1([1, 2, 3, 1]))
+print(duplicate1([1, 2, 3, 4]))
