@@ -1,30 +1,20 @@
 """
 https://leetcode.com/problems/3sum/
 
-Example 1:
-
-Input: nums = [-1,0,1,2,-1,-4]
-Output: [[-1,-1,2],[-1,0,1]]
-Example 2:
-
-Input: nums = []
-Output: []
-
-Approach: first sort the numbers use the first number and iterate through the rest of the elements using two pointers. 
+Approach: first sort the numbers use the first number and iterate through the rest of the elements 
+using two pointers. 
 now repeat the same process for the rest of the first elements.
 
 TC: O(n^2)
 SC: O(n)
 
 """
-
-
 def threeSum(nums):
     nums.sort()
     res = []
     for index, first_val in enumerate(nums):
         if index > 0 and nums[index] == nums[index-1]:  # to avoid duplicate values
-            continue
+            continue 
         left = index + 1
         right = len(nums) - 1
         while left < right:

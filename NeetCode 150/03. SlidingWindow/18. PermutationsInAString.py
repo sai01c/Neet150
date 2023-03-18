@@ -22,40 +22,23 @@ Sc: O(n) arrays
 
 """
 
-
-def permutations(s1, s2):
-    if len(s1) > len(s2):
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        left = 0
+        c1 = defaultdict(int)
+        c2 = defaultdict(int)
+        for char in s1:
+            c1[char] += 1
+        for right in range(len(s2)):
+            sub = s2[left:right+1]
+            c2[s2[right]] += 1
+            
+            if c1 == c2:
+                return True
+            print(c2)
+            if len(sub) == len(s1):
+                c2[s2[left]] -= 1
+                if c2[s2[left]] == 0: del c2[s2[left]]
+                left += 1
+                
         return False
-
-    s1count = [0] * 26
-    s2count = [0] * 26
-
-    for i in range(len(s1)):
-        index = ord(s1[i]) - ord('a')
-        s1count[index] += 1
-        index_s2 = ord(s2[i]) - ord('a')
-        s2count[index_s2] += 1
-    print("s1count", s1count)
-    print("s2count:", s2count)
-
-    left = 0
-    for right in range(len(s1), len(s2)):
-        if s1count == s2count:
-            return True
-
-        index_r = ord(s2[right]) - ord('a') 
-        #we increase the right count and decrease the left count to maintain the window size
-        s2count[index_r] += 1
-
-        index_l = ord(s2[left]) - ord('a')
-        s2count[index_l] -= 1
-        left += 1
-
-    if s1count == s2count:
-        return True
-
-    else:
-        return False
-
-
-print(permutations("ab", "eidbaooo"))

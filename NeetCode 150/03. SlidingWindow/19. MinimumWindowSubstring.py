@@ -12,7 +12,6 @@ but I think it is O(n^2) because of for and while
 Sc: O(n) dictionary used here
 """
 
-
 def minWinSubstr(s, t):
     tcount = {}
     subStrcount = {}
@@ -47,7 +46,6 @@ def minWinSubstr(s, t):
                 have -= 1 #decrease have because we changed left count and out scount may vary now
             left += 1 #increase left because we already got min
 
-    left, right = res
     return res if resLen != float("infinity") else ""
 
 

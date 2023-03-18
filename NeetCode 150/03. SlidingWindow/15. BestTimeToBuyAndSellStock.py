@@ -1,51 +1,49 @@
 """
-Input: prices = [7,1,5,3,6,4]
-Output: 5
-Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
-Approach 1 EXPLANATION: iterate throught the prices and first find out the minimum price. 
-calculate profit and find out the maximum profit.
+Sliding Window: initiate two pointer's left and right. if price of right is less than left, 
+that means we found minP. assign left pointer to this index
+calculate profit. use another variable to get max of all profits. 
 
 TC: O(n)
 SC: O(1)
 """
 
-
-def stock1(prices):
-    minPrice = float("inf")
-    maxProfit = 0
-    for price in prices:
-        minPrice = min(price, minPrice)
-        profit = price - minPrice
-        maxProfit = max(profit, maxProfit)
-    return maxProfit
-
-
-print(stock1([7, 1, 5, 3, 6, 4]))
-print(stock1([7, 6, 4, 3, 1]))
+def maxProfit(self, prices: List[int]) -> int:
+    left = 0
+    right = 0
+    ans = 0
+    for right in range(len(prices)):
+        if prices[right] < prices[left]:
+            left = right
+        profit = prices[right] - prices[left]
+        ans = max(ans, profit)
+        
+    return ans
 
 """
-Approach 2: use sliding window pattern - left will be fixed. right will iterate through the array. 
-update the left pointer based on condition 
-subtract right - left to give the profit. 
-use max to get the highest profit. 
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+
+Approach: use sliding window concept here as well,
+only change is their in the first question, you need to find max profit. 
+But, here you need to find all profits. 
+so, after you calculate the first profit, there still may be another profit chance
+so, initiate left pointer at the right index.
 
 Tc: O(n)
 Sc: O(1)
 
 """
-
-
-def stock2(prices):
-    left = 0
-    res = 0
-    for right in range(1, len(prices)):
-        if prices[right] < prices[left]:
-            left = right
-        res = max(res, prices[right] - prices[left])
-    return res
-
-
-print(stock2([7, 1, 5, 3, 6, 4]))
-print(stock2([7, 6, 4, 3, 1]))
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        ans = 0
+        left = 0
+        for right in range(len(prices)):
+            if prices[right] < prices[left]:
+                left = right
+            profit = prices[right] - prices[left]
+            ans += profit
+            
+            if profit > 0:
+                left = right
+        return ans
