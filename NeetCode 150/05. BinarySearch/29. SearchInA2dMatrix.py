@@ -14,7 +14,7 @@ def search2dMatrix(matrix, target):
     cols = len(matrix[0])
     t = 0
     b = rows - 1
-    while t <= b:
+    while t <= b: #find the row first
         midRow = (t+b) // 2
         if target < matrix[midRow][0]:
             b = midRow - 1
@@ -25,7 +25,7 @@ def search2dMatrix(matrix, target):
 
     l = 0
     r = cols - 1
-    while l <= r:
+    while l <= r: #then find the element in the row.
         m = (l+r)//2
         if target < matrix[midRow][m]:
             r = m - 1

@@ -1,32 +1,17 @@
 """
 https://leetcode.com/problems/valid-parentheses/
 
-Approach: we create a dict with closing braces. 
-while iterating throught the input, we check if it is an open or close brace - 
-open brace we add to the stack. close brace we compare the last value in stack to the dict. 
+Approach: we shall create a dict with close ones as key. 
+we iterate thorough the input and if we get open ones we append to stack 
+if we get close ones we check if dict = stack and pop them 
+if dict is not equal to stack return false
+if stack is empty return true
+if stack is not empty return false
 
-TC: O(n) we are iterating once
-Sc: O(n) stack
+Tc: O(n) we are iterating over them once
+Sc: O(n) we are using count dictionary
 
 """
-
-
-def validParanthesis(input):
-    dic = {
-        ")": "(",
-        "}": "{",
-        "]": "["
-    }
-    stack = []
-    for brace in stack:
-        if brace not in dic:
-            stack.append(brace)
-        else:
-            if stack and stack[-1] == dic[brace]:
-                stack.pop()
-            else:
-                return False
-    return True if not stack else False
 
 
 def isValid(s: str) -> bool:
@@ -47,3 +32,7 @@ def isValid(s: str) -> bool:
             stack.append(char)
     return True if not stack else False  # we may have single bracket in stack
 # if our stack is empty means we have popped everything and they all are equal.
+
+
+s = "()[]{}"
+print(isValid(s))

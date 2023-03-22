@@ -1,45 +1,6 @@
 """
 https://leetcode.com/problems/sliding-window-maximum/
 
-Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
-Output: [3,3,5,5,6,7]
-Explanation: 
-Window position                Max
----------------               -----
-[1  3  -1] -3  5  3  6  7       3
- 1 [3  -1  -3] 5  3  6  7       3
- 1  3 [-1  -3  5] 3  6  7       5
- 1  3  -1 [-3  5  3] 6  7       5
- 1  3  -1  -3 [5  3  6] 7       6
- 1  3  -1  -3  5 [3  6  7]      7
- 
- """
-
-
-# this is a brute force solution. Using the basic sliding window concept and finding the maximum element using in-built max function.
-# TC: O(k * (n-k))
-# Sc: O(n) using array
-# Accepted test cases - 35 / 51 test cases passed.
-import collections
-
-
-def slidingWindowMaximum(nums, k):
-    left = 0
-    ans = 0
-    res = []
-    for right in range(k, len(nums) + 1):
-        window = nums[left: right]
-        if len(window) >= k:
-            left += 1
-        for num in window:
-            ans = max(ans, num)
-        res.append(ans)
-    return res
-
-
-print(slidingWindowMaximum([1, 3, -1, -3, 5, 3, 6, 7], 3))
-
-"""
 Optimal solution O(n) 
 
 Approach - we are going to have a queue with the indexes of the elements of nums. 

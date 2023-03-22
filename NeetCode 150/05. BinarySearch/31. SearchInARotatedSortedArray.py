@@ -14,6 +14,7 @@ def search(nums, target):
     left = 0
     right = len(nums)-1
 
+    #first find the least element
     while left < right:
         mid = (left + right) // 2
         if nums[mid] < nums[right]:
@@ -24,11 +25,13 @@ def search(nums, target):
     right = len(nums) - 1
     left = 0
 
+    #based on least element shift the pointer's.
     if target <= nums[right] and target >= nums[least]:
         left = least
     else:
         right = least - 1
 
+    #find the target element in the updated pointers
     while left <= right:
         mid = (left + right) // 2
         if target == nums[mid]:
@@ -37,6 +40,7 @@ def search(nums, target):
             right = mid-1
         elif target > nums[mid]:
             left = mid+1
+    #target is not there in our array
     return -1
 
 

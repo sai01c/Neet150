@@ -1,12 +1,16 @@
 """
-Input: nums1 = [1,3], nums2 = [2]
-Output: 2.00000
+https://leetcode.com/problems/median-of-two-sorted-arrays/
+
+Approach: 
+
+
+Tc - 
+Sc - 
 """
 
-"""this is merge sort approach. time complexity is nlogn but we want logn"""
 
-
-class Solution:
+# this is merge sort solution - not recommended.
+class Solution: 
     def findMedianSortedArrays(self, nums1, nums2) -> float:
         i = 0
         j = 0
@@ -36,3 +40,4 @@ class Solution:
             return (array[n//2] + array[(n//2) - 1])/2
         else:
             return array[(n//2)]
+

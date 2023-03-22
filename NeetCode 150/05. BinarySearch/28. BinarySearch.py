@@ -11,7 +11,8 @@ Sc: O(1) constant
 """
 
 
-def binary(nums, target):
+def binary(nums, target): 
+    #traditional binary search
     left = 0
     right = len(nums) - 1
     while left <= right:

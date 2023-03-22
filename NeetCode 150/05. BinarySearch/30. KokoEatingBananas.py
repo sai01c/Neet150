@@ -12,20 +12,25 @@ Sc: O(1)
 
 
 def func_piles(piles, h):
-    left = 1 #start from 1? why?
-    right = max(piles) #time complexity for this is still O(n)
+    left = 1 #start from 1 - this is the minimum speed.
+    right = max(piles) #O(n)
     ans = float("infinity")
     while left <= right:
         mid = (left + right) // 2
-        total_time = 0
+        #always initiate total time to 0
+        total_time = 0 
         for p in piles:
             total_time += ((p-1) // mid) + 1
-        if total_time <= h: #time is less than what we have, we can decrease speed to optimize
-            ans = mid
+        #time is inversely proportional to speed
+        if total_time <= h: 
+            #time is less that given. we need to increase time so we decrease speed.
+            #this is the min speed so far. continue to update it
+            ans = mid 
             right = mid - 1
-        else: #time is more than what we have, so increase speed
+        else: 
+            #time is more than given, time needs to decreased, so we increase speed
             left = mid + 1
-    return ans
+    return ans 
 
 
 print(func_piles([3, 6, 7, 11], 8))
