@@ -1,7 +1,8 @@
 """
 https://leetcode.com/problems/copy-list-with-random-pointer/
 
-Approach: first we need a dictionary. Whenever we are trying to clone something, we use dic
+Approach: first we need a dictionary. 
+Whenever we are trying to clone something, we use dic.
 first, while iterating through the linkedlist, we create a copy of the value and add it to the dic
 Now, use another while to iterate over the linkedlist and add next and random pointers by indexing the dic
 
@@ -21,7 +22,7 @@ class Node:
 
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
-        dic = {None: None}
+        dic = {None: None} #why none
         original = head
         while original:
             copy = Node(original.val)

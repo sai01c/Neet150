@@ -1,45 +1,48 @@
 """
 https://leetcode.com/problems/reorder-list/
 
-Input: head = [1,2,3,4]
-Output: [1,4,2,3]
-
-Approach: divide the linked list into two halves using slow, fast pointer's technique. 
-use two pointer slow and fast to find out the mid 
+Approach: divide the linked list into two halves.
+use two pointer slow and fast to find out the midle 
 First half should be normal and second should be reversed. 
 merge both the halves. 
+
+Tc: O(n) we are iterating multiple times but it is n+n+n
+Sc: O(n)
 """
 
-#example [1,2,3,4,5]
-
-
-def reOrder(head):
-    slow = head
-    fast = head.next
-    # to find out the mid of the linkedlist
-    while fast and fast.next:  # as we are incrementing fast pointer by 2 we should check for fast.next also
-        slow = slow.next
-        fast = fast.next.next
-    # slow at 3, fast at None
-
-    # reverse the linked list- [4,5]
-    current = slow.next
-    slow.next = None  # closing the first half of the linkedlist
-    prev = None
-    while current:
-        temp = current.next
-        current.next = prev
-        prev = current
-        current = temp
-    #now [5,4]
-
-    # merging the revered second half and first half
-    first = head  # 1
-    second = prev  # 5
-    while second:
-        t1 = first.next
-        t2 = second.next
-        first.next = second
-        second.next = t1
-        first = t1
-        second = t2
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+        
+class Solution:
+    def reorderList(self, head: Optional[ListNode]) -> None:
+        """
+        Do not return anything, modify head in-place instead.
+        """
+        dummy = ListNode()
+        dummy.next = head
+        slow = fast = dummy 
+        #to find the middle element of linked list
+        # 1-2-3-4-5 we need middle at 3
+        # 1-2-3-4 we need middle at 2
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        second = slow.next 
+        slow.next = None #we are ending first half here
+        prev = None
+        while second: #reversing second list here
+            temp = second.next
+            second.next = prev
+            prev = second
+            second = temp
+        first = head #assign first to initial head
+        second = prev
+        while second: #merging first and second half
+            a = first.next
+            b = second.next
+            first.next = second
+            second.next = a
+            first = a
+            second = b

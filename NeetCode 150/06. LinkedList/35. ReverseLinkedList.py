@@ -1,17 +1,12 @@
 """
 https://leetcode.com/problems/reverse-linked-list/
 
-Input: head = [1,2,3,4,5]
-Output: [5,4,3,2,1]
-
-Approach: this is better understood if written on notes.
+Approach: Iterative - this is better understood if written on notes.
 First, we shift the pointer from current to previous. 
 Now, current becomes prev and the actual next (temp) becomes current
-
-this is an iterative approach, recursive watch video again
-
-TC O(n)
-SC O(n)
+ 
+TC O(n) as we are visiting all the nodes once
+SC O(n) why TODO
 
 """
 
@@ -23,16 +18,16 @@ class ListNode:
 
 
 class Solution:
-    def reverse(head: ListNode) -> ListNode:
+    def reverse(self, head: ListNode) -> ListNode:
         curr = head
         prev = None
         while curr:
             temp = curr.next  # storing the variable
             curr.next = prev  # shifting the pointer
-            prev = curr
+            prev = curr #prev should be assigned first
             curr = temp
         return prev
 
-
-obj = Solution()
-obj.reverse([2, 3, 4, 5])
+"""
+Recursive solution - TODO
+"""
