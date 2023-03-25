@@ -61,3 +61,4 @@ def palindromicSubstring(s, left, right):
 - Instead of creating a frequency dictionary and sorting it, see if you can create an
 array and use index as frequency. This will eliminate sorting the frequency. Eg: if it is frequency of alphabets, you can create an array with index a, b, c, d until z. Eg: Top K frequent elements.
 - Sorted array - always try two pointer approach.
+- For undirected graph, always add both edges s -> e and e -> s to our adjacency list.

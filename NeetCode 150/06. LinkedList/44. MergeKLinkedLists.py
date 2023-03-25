@@ -1,21 +1,18 @@
 """
 https://leetcode.com/problems/merge-k-sorted-lists/
 
-Approach: we use the merge 2 lists method 
+Approach: we use the merge 2 lists method. 
 each iteration we take two lists and append it as 1 to the original lists. 
-repeat until the original lists just has one list
+Repeat until the original lists just has one list.
 
-TC: O(n^2)
+TC: O(n^2) TODO
 SC: O(n)
-
 """
-
 
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-
 
 def mergeKlists(lists):
     if len(lists) == 0:
@@ -29,7 +26,7 @@ def mergeKlists(lists):
             mergedLists.append(merge2lists(l1, l2))
         # update the lists after the for loop is completed as we need to check the while condition.
         lists = mergedLists
-    return lists[0]
+    return lists[0] #0th index has the linked list so just return that. 
 
 
 def merge2lists(l1, l2):

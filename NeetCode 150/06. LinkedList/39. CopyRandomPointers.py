@@ -22,14 +22,18 @@ class Node:
 
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
-        dic = {None: None} #why none
+        dic = {None: None} #because random pointer may point to some None node
         original = head
+        #first iteration we are just creating copies without any pointers
+        #because random may point to any node and we may not have that node already created
+        #so first create all nodes then assign pointers
         while original:
-            copy = Node(original.val)
-            dic[original] = copy
+            copy = Node(original.val) #just node
+            dic[original] = copy 
             original = original.next
 
         original = head
+        #second iteration use the copy node we created and assign pointers
         while original:
             copy = dic[original]
             copy.next = dic[original.next]
