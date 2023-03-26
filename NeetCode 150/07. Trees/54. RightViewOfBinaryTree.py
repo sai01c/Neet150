@@ -1,4 +1,6 @@
 """
+https://leetcode.com/problems/binary-tree-right-side-view/
+
 Explanation: First, we create a queue and add all the elements to it.
 Now we iterate through the queue. And pop one item each iteration.
 Now, we add the val to the level array and add left and right values back to the queue.
@@ -69,7 +71,7 @@ class Solution:
                     level.append(curr.val)
                     q.append(curr.left)
                     q.append(curr.right)
-            if level:
+            if level: #right element of the level
                 res.append(level[-1])
 
         return res
@@ -90,7 +92,7 @@ class Solution:
                     level.append(curr.val)
                     q.append(curr.left)
                     q.append(curr.right)
-            if level:
+            if level: #first element of the level
                 res.append(level[0])
 
         return res

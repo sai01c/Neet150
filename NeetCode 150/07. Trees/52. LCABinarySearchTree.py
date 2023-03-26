@@ -12,13 +12,16 @@ Sc: O(1)
 
 """
 
-
 def function(root, p, q):
-    curr = root
+    #do generic traversal and each iteration compare node.val with p and q.
+    curr = root 
     while curr:
+        #p and q are greater than node so shift right
         if p.val > curr.val and q.val > curr.val:
             curr = curr.right
-        if p.val < curr.val and q.val < curr.val:
+        #p and q less than node so shift left
+        elif p.val < curr.val and q.val < curr.val:
             curr = curr.left
+        #we can't shift left and right. this node is the output
         else:
             return curr
