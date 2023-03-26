@@ -36,7 +36,6 @@ def diameter(root):
     height(root)
     return ans
 
-
 def height(root):
     if root == None:
         return 0
