@@ -8,17 +8,18 @@ if val is not equal they are not equal
 if val is equal then left and right must be equal 
 
 Tc: O(n) as you are travesing every node. 
-Sc: 
+Sc: O(n) recursion stack
 
 """
 
-
 def sameBinaryTree(p, q):
-    if not p or not q:  # if p == None or q == None: is not working
-        return False  # what's the difference b/w not p and p == None
-    if not p and not q:
+    if not p and not q: #
+    #AND condition should be checked first as OR condition can also satisfy and condition
         return True
-    if p.val != q.val:
+    if not p or not q: 
+        return False  
+    if p.val != q.val: #that means values are not equal
         return False
 
+    #now check recursively for children
     return (sameBinaryTree(p.left, q.left) and sameBinaryTree(p.right, q.right))
