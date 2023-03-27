@@ -32,7 +32,7 @@ class Codec:
             if node:
                 q.append(node.left)
                 q.append(node.right)
-                res.append(node.val)
+                res.append(str(node.val))
             else:
                 res.append("N")
 
@@ -47,9 +47,10 @@ class Codec:
         q = collections.deque()
         root = TreeNode(data[0])
         q.append(root)
-        i = 1
+        i = 1 #we are starting at 1 because we already added root 
         while q: 
             node = q.popleft() #we pop always
+            
             if i<len(data) and data[i] != "N": #we append only if not N
                 node.left = TreeNode(data[i])
                 q.append(node.left)
