@@ -14,13 +14,15 @@ so now, first child here is b, cur will be at b. i is at 1 so char is "a"
 now, a is there in cur.children (i.e. a and d)
 
 this is a sexy problem, revise this many many times. 
-"""
 
+TC: TODO
+SC: TODO
+"""
 
 class TrieNode:
     def __init__(self):
-        self.children = {}  # a : TrieNode
-        self.word = False
+        self.child = {}  # a : TrieNode
+        self.endOfWord = False
 
 
 class WordDictionary:
@@ -28,29 +30,31 @@ class WordDictionary:
         self.root = TrieNode()
 
     def addWord(self, word: str) -> None:
-        cur = self.root
-        for c in word:
-            if c not in cur.children:
-                cur.children[c] = TrieNode()
-            cur = cur.children[c]
-        cur.word = True
+        curr = self.root
+        for char in word:
+            if char not in curr.child:
+                curr.child[char] = TrieNode()
+            curr = curr.child[char]
+        curr.endOfWord = True
 
     def search(self, word: str) -> bool:
-        def dfs(j, root):
-            cur = root
-
-            for i in range(j, len(word)):
-                c = word[i]
-                if c == ".":
-                    for child in cur.children.values():
-                        if dfs(i + 1, child):
-                            return True  # for all the children, even if one of
-                            # the children is true then we are good here so first true condition
+        
+        def dfs(index, TrieNode):
+            curr = TrieNode 
+            #initiate the curr at this Trienode
+            for i in range(index, len(word)):
+                char = word[i]
+                if char == ".": 
+                    #we skip to next i value and next series of Trienodes
+                    for children in curr.child.values(): #values because values are the trienodes
+                        if dfs(i + 1, children):
+                            return True
                     return False
-                else:
-                    if c not in cur.children:
+                else: 
+                    #regular Trienode case
+                    if char not in curr.child:
                         return False
-                    cur = cur.children[c]
-            return cur.word
-
-        return dfs(0, self.root)
+                    curr = curr.child[char]
+            return curr.endOfWord
+        
+        return dfs(0, self.root) #running dfs on initial trienode

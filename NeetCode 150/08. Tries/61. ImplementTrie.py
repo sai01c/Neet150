@@ -7,8 +7,9 @@ first, we use dictionary to check if the char is in the node
 we need to create a seperate TrieNode to initiate nodes
 we also use endOfword to mark the end of word- will be used for search and startswith
 
+TC: TODO
+SC: TODO
 """
-
 
 class TrieNode(): #idea of creating TrieNode with dic and bool is the key here
     def __init__(self):
@@ -47,10 +48,3 @@ class Trie:
                 return False
             curr = curr.child[char]
         return True  # we just want starts with so its just True
-
-
-# Your Trie object will be instantiated and called as such:
-# obj = Trie()
-# obj.insert(word)
-# param_2 = obj.search(word)
-#
