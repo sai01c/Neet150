@@ -20,20 +20,23 @@ SC: O(n) as we are using heap
 """
 import heapq
 
-
 class KthLargest:
 
-    def __init__(self, k, nums):
+    def __init__(self, k: int, nums: List[int]):
         self.k = k
-        self.minHeap = nums
-        heapq.heapify(self.minHeap)
+        self.nums = nums
+        self.heap = []
+        for val in nums:
+            heapq.heappush(self.heap, val)
 
-    def add(self, val) -> int:
-        heapq.heappush(self.minHeap, val)
-        while len(self.minHeap) > self.k:
-            heapq.heappop(self.minHeap)
-        return self.minHeap[0]
+    def add(self, val: int) -> int:
+        heapq.heappush(self.heap, val) #adding single element is logn.
+        #we always add new value but we restrict the size to k. if size exceeds more than k, we pop elements.
+        while len(self.heap) > self.k:
+            heapq.heappop(self.heap)
+        
+        return self.heap[0] #return 0th element because it is the min element or kth greater element.
 
-
-obj = KthLargest(3, [4, 5, 8, 2])
-print(obj.add(9))
+# Your KthLargest object will be instantiated and called as such:
+# obj = KthLargest(k, nums)
+# param_1 = obj.add(val)
