@@ -62,3 +62,18 @@ def palindromicSubstring(s, left, right):
 array and use index as frequency. This will eliminate sorting the frequency. Eg: if it is frequency of alphabets, you can create an array with index a, b, c, d until z. Eg: Top K frequent elements.
 - Sorted array - always try two pointer approach.
 - For undirected graph, always add both edges s -> e and e -> s to our adjacency list.
+- If we want to find the maximum or minimum from an array always use heaps.
+- In python, by default, we will have min heap. We can convert this to max heap by multiplying all the elements by -1 and we can use abs(value) in the end to return the original value.
+- If we want to find the kth largest element in an array using heap, other approach is to continue usin the default min-heap in python. But, we pop the min-heap until we have k elements in an array.
+  `Eg: input= [1,2,3,,4,5] k = 3 we pop 2 times i.e 1,2 will be removed. input = [3,4,5] It has k number of elements. If we pop now we get the head which is the kth largest element in the orginal input.`
+- Counter(nums)- dict with keys as elements in nums and values as the frequency of those elements in nums.
+- nums = [1,1,2,2,2,3,4] `count = Counter(nums) = {1:2, 2:3, 3:1, 4:1}`
+- Counter by default sorts the items by highest frequency. But, while iterating over a counter it will iterate based on the order of the elements in the original input not by the frequency. So, always copy a counter to new list and iterate over the list to get the sorted frequency. To summarize, dictionary in python doesn't store the order so always copy the dict to new list while sorting it.
+- sortedList = `sorted(dict.items(), key= lambda x:x[1], reverse= True)` sorts the dictionary by values i.e. frequency. `[{2:3, 1:2, 3:1, 4:1}]`
+- If we want to add elements or remove the last element, we may want to use stack there. For its pop operation(LIFO)
+- For Binay Search, if the input is not sorted but the intended output has lower and upper intervals then you can use binary search because output will be a sorted array b/w those intervals.
+- For sorting an array, you can eliminate sorting in n logn by using indexes of array as sorting. Eg: you need to sort array based on frequency. You can create a frequency array where the index represents the frequency and this way you can sort in just O(n)
+- Two heaps pattern - IPO, Median of Data Stream.
+- If you want to go to the middle of linked list, use slow and fast pointer technique.
+- In linked list, if you assign one pointer to head and shift that pointer. You can still go back to head by using another pointer. But, if you change the node.next using the first pointer it will remain same with second pointer as well.
+- To remove key, value from dic - dic[key].remove(value)
