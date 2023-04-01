@@ -4,27 +4,26 @@ https://leetcode.com/problems/course-schedule/
 Approach: first, create a dictionary with key as the course and value as the preRequisites for that course
 {0: 1, 1: [2,3]}
 Now, apply dfs for each course. For dfs we use a set and check if already visited
-Next, iterate through all the courses and apply dfs on each course
+Next, iterate through all the courses and apply dfs on each course.
+
+Tc: O() TODO
+Sc: O(n) dic
 """
 
-from ast import List
-
+import collections
 
 class Solution:
-    def canFinish(self, numCourses: int, pre: List[List[int]]) -> bool:
-        preDic = {}
-        for i in pre:
-            if i[0] not in preDic:
-                preDic[i[0]] = [i[1]]
-            else:
-                preDic[i[0]].append(i[1])
-
+    def canFinish(self, numCourses: int, pre) -> bool:
+        preDic = collections.defaultdict(list)
+        for k, v in pre: #adding to the dictionary
+            preDic[k].append(v)
         visit = set()
 
         def dfs(course):
             if course in visit:  # cycle exists
                 return False
-            if course not in preDic:  # no prereq for this course
+            if course not in preDic or preDic[course] == []:  
+                # no prereq for this course
                 return True
             # before checking for neighbors we need to add this to set to check for cycle
             visit.add(course)
@@ -32,7 +31,8 @@ class Solution:
                 if not dfs(nei):
                     return False
             visit.remove(course)
-            preDic[course] = []
+            preDic[course] = [] #this is for elimination TLE. 
+            
             return True
 
         # if numCourses is 2 that means courses are 0 and 1

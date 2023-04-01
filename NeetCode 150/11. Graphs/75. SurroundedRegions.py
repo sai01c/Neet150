@@ -10,44 +10,46 @@ Next, iterate and check for T, we can bring them back to O as we cannot capture 
 TC: O(m*n)
 """
 
-
-def sr(graph):
-
-    rows = len(graph)
-    cols = len(graph[0])
-
-    def dfs(r, c):
-
-        if (r < 0 or
-            c < 0 or
-            r == rows or
-            c == cols or
-                graph[r][c] != "O"):
-            return
-        graph[r][c] = "T"
-        directions = [[-1, 0], [1, 0], [0, 1], [0, -1]]
-        for dr, dc in directions:
-            dfs(r+dr, c+dc)
-
-    for r in range(rows):
-        for c in range(cols):
-            if (graph[r][c] == "O" and
-                    (r in [0, rows-1] or c in [0, cols-1])):
-                dfs(r, c)
-
-    for r in range(rows):
-        for c in range(cols):
-            if graph[r][c] == "O":  # we have not changed them to T
-                graph[r][c] = "X"
-
-    for r in range(rows):
-        for c in range(cols):
-            if graph[r][c] == "T":
-                graph[r][c] = "O"
-
-    return graph
-
-
-board = [["X", "X", "X", "X"], ["X", "O", "O", "X"],
-         ["X", "X", "O", "X"], ["X", "O", "X", "X"]]
-print(sr(board))
+class Solution:
+    def solve(self, board: List[List[str]]) -> None:
+        """
+        Do not return anything, modify board in-place instead.
+        """
+        rows = len(board)
+        cols = len(board[0])
+        visit = set()
+        
+        #we iterate over O cells and mark all the not capturable cells as T. if we are able to
+        # reach other 0 from these boundary 0 then that means they are not capturable
+        def dfs(r, c):
+            if (r not in range(rows) or
+               c not in range(cols) or 
+               (r, c) in visit or
+               board[r][c] != "O"):
+                return
+            
+            board[r][c] = "T"
+            directions = [[0,1],[0,-1],[1,0],[-1,0]]
+            for dr, dc in directions:
+                nr, nc = r+dr, c+dc
+                dfs(nr, nc)
+        
+        #we iterate over the boundaries and check for O and do dfs on them
+        #after dfs on these cells, we mark them as T. all these cells can't be captured because they 
+        #can be reached from boundary O
+        for r in range(rows):
+            for c in range(cols):
+                if board[r][c] == "O" and (r in [0, rows-1] or c in [0, cols-1]):
+                    dfs(r, c)
+                    
+        #mark all cells that can be captured as X
+        for r in range(rows):
+            for c in range(cols):
+                if board[r][c] == "O":
+                    board[r][c] = "X"
+                    
+        #these cells can not be captured so change them back to O
+        for r in range(rows):
+            for c in range(cols):
+                if board[r][c] == "T":
+                    board[r][c] = "O"

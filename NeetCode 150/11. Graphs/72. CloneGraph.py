@@ -18,9 +18,11 @@ class Node:
 
 class Solution:
     def graphClone(self, node: 'Node') -> 'Node':
-        dic = {}
+        dic = {}  # we need not pass this to clone function ???
 
         def clone(node):
+            if not node:
+                return
             if node in dic:  # if node is there is the dic
                 return dic[node]
             copy = Node(node.val)  # create a copy
@@ -28,8 +30,9 @@ class Solution:
             for nei in node.neighbors:
                 # for all the neighbors of the original node
                 copy.neighbors.append(clone(nei))
-            return copy
-        return clone(node) if node else None
+            return copy #if all the neighbors are done we just return this node value
+        
+        return clone(node) 
 
 
 obj = Solution()

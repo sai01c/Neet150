@@ -34,6 +34,7 @@ class Solution:
                     backtrack(i+1) #do recursive call on next iteration
 
                     permutation.pop() #after recursive call remove the element
+                    visit.remove(i)
 
         backtrack(0)
         return res
