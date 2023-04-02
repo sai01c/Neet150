@@ -29,14 +29,14 @@ def wallGates(grid):
     while q:
         for i in range(len(q)):
             r, c = q.popleft()
-            grid[r][c] = dist
+            grid[r][c] = dist #we are doing it in-place so mark dist to this cell
             for dr, dc in directions:
                 nr, nc = r+dr, c+dc
                 if (nr in range(rows) and 
                     nc in range(cols) and 
                     (nr,nc) not in visit and
-                    grid[nr][nc] != -1):
-                    q.append((nr, nc))
+                    grid[nr][nc] != -1): #if wall we don't want to proceed
+                    q.append((nr, nc)) 
                     visit.add((nr, nc))
 
-            dist += 1
+        dist += 1 #increase distance because one iteration is done

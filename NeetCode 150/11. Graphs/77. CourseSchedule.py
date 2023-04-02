@@ -30,7 +30,7 @@ class Solution:
             for nei in preDic[course]:
                 if not dfs(nei):
                     return False
-            visit.remove(course)
+            visit.remove(course) #remove from cycle as this is already done
             preDic[course] = [] #this is for elimination TLE. 
             
             return True
