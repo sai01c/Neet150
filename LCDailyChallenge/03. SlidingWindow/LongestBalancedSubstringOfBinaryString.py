@@ -7,17 +7,15 @@ sc - O(1)
 
 class Solution:
     def findTheLongestBalancedSubstring(self, s: str) -> int:
-        left = 0
         res = 0
         countzero = 0
         countone = 0
         prev = 1
         for right in range(len(s)):
             if (prev == 1 and s[right] == "0"): #that means we have to start our substring here
-                left = right #so set initial values here
+                #so set initial values here
                 countzero = 0
                 countone = 0
-            sub = s[left:right+1]
             
             if s[right] == "0": 
                 countzero += 1
