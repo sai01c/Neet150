@@ -1,4 +1,5 @@
 """
+https://leetcode.com/problems/detect-squares/
 
 APPROACH: add, count methods are given. 
 For add method, we have a list of lists. This add method appends the list here. 
@@ -11,24 +12,29 @@ SC: O(N) dict
 
 """
 
-
 from collections import defaultdict
 
 
 class DetectSquares:
     def __init__(self):
-        self.ptsCount = defaultdict(int)
-        self.pts = []
+        self.count = defaultdict(int)
+        self.points = []
 
     def add(self, point: List[int]) -> None:
-        self.ptsCount[tuple(point)] += 1
-        self.pts.append(point)
+        self.count[tuple(point)] += 1 #we need to convert list to tuple to be able to add to dic
+        self.points.append(point) #maintain an array that consists of all the points
 
     def count(self, point: List[int]) -> int:
         res = 0
         px, py = point
-        for x, y in self.pts:
-            if (abs(py - y) != abs(px - x)) or x == px or y == py:
+        for x, y in self.points:
+            
+            if (
+                (abs(py - y) != abs(px - x)) or #this is basically diagonal so it can't be different
+                x == px or #if same point then we can't form a square
+                y == py
+                ):
                 continue
-            res += self.ptsCount[(x, py)] * self.ptsCount[(px, y)]
+            #then multiply the counts - because if two points same then we can get the count of 2 using multiply
+            res += self.ptsCount[(x, py)] * self.ptsCount[(px, y)] 
         return res

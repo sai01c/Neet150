@@ -13,17 +13,16 @@ SC: O(1)
 
 
 def plusOne(digits):
-    if digits == []:
+    if digits == []: #if null array we need to add 1
         return [1]
 
-    if digits[-1] == 9:
+    if digits[-1] == 9: #last digit is 9 then do recursion excluding last digit
         digits = plusOne(digits[:-1])
-        digits.extend([0])
+        digits.extend([0]) #and then append 0
 
-    else:
+    else: #if not 9 simply add 1 to the last digit
         digits[-1] += 1
 
     return digits
 
 
-print(plusOne([1, 2, 3, 9]))

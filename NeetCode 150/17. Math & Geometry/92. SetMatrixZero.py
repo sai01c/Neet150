@@ -1,9 +1,6 @@
 """
 https://leetcode.com/problems/set-matrix-zeroes/
 
-Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
-Output: [[1,0,1],[0,0,0],[1,0,1]]
-
 First, we need to iterate through the row and column to find the element which is equal to zero. 
 Add that particular row and column to our sets. 
 Now, again iterate through the row and column and mark them as zero if they are there in our lists. 
@@ -21,13 +18,13 @@ def matrixZero(matrix):
     for r in range(m):
         for c in range(n):
             if matrix[r][c] == 0:
-                zeroRow.add(r)
-                zeroCol.add(c)
+                zeroRow.add(r) #add this row to our set
+                zeroCol.add(c) #add this column to our set
     for r in range(m):
         for c in range(n):
-            if r in zeroRow:
+            if r in zeroRow: #this row is in our set so element will be 0
                 matrix[r][c] = 0
-            if c in zeroCol:
+            if c in zeroCol: #this column is in our set so element will be 0
                 matrix[r][c] = 0
 
     return matrix

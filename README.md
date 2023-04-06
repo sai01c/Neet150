@@ -77,4 +77,4 @@ array and use index as frequency. This will eliminate sorting the frequency. Eg:
 - If you want to go to the middle of linked list, use slow and fast pointer technique.
 - In linked list, if you assign one pointer to head and shift that pointer. You can still go back to head by using another pointer. But, if you change the node.next using the first pointer it will remain same with second pointer as well.
 - To remove key, value from dic - dic[key].remove(value)
-- Use BFS if you want to calculate time, cost etc because in BFS we can add for loop and calculate all nodes at once. Eg - Rotten oranges, wall gates etc.
+- Use BFS if you want to calculate time, cost etc because in BFS we can add for loop and calculate all nodes at once. Eg - Rotten oranges, wall gates, word ladder etc.

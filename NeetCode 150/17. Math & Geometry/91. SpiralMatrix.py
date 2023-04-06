@@ -36,8 +36,8 @@ class Solution:
             for r in range(top, bottom+1):
                 res.append(matrix[r][right])
             right -= 1
-
-            if not (left <= right and top <= bottom):  # DID NOT UNDERSTAND THIS
+            #if a matrix is either single row or single column matrix we need to use this
+            if not (left <= right and top <= bottom):  
                 break
 
             for c in range(right, left-1, -1):
