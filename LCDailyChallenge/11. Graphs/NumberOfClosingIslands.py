@@ -32,6 +32,7 @@ class Solution:
                 nr, nc = r+dr, c+dc
                 dfs(nr, nc)
 
+        #traverse through entire matrix and mark all 0's as 1 because these 0 are not useful for us
         for r in range(rows):
             for c in range(cols):
                 if r in [0, rows-1] or c in [0, cols-1]:
@@ -39,6 +40,7 @@ class Solution:
         
         print(grid)
         islands = 0
+        #traverse through the matrix and find number of 0 islands
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c] == 0 and (r,c) not in visit:

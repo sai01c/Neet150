@@ -21,24 +21,18 @@ I will never be able to do this
 class Solution:
     def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
         res = []
-        dic = {}
-        for num in sorted(queries):
-            heap = []
-            for s, e in sorted(intervals):
-                if num in range(s, e+1):
-                    diff = e - s + 1
-                    heapq.heappush(heap, [diff, num])
-
-            if heap:
-                small, num = heapq.heappop(heap)
-            else:
-                small, num = [-1, num]
-            dic[num] = small
-
         for q in queries:
-            res.append(dic[q])
+            heap = []
+            for x, y in intervals:
+                if (q >= x and q <= y):
+                    heapq.heappush(heap, y-x+1)
+            if heap:
+                mini = heapq.heappop(heap)
+                res.append(mini)
+            else:
+                res.append(-1)
+            
         return res
-
 
 class Solution:
     def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:

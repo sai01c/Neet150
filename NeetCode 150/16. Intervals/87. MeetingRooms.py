@@ -1,8 +1,8 @@
 """
 https://www.lintcode.com/problem/920/
 
-
-Approach- First, sort the intervals based on start times. Now check if the i1.start<i0.end
+Approach- First, sort the intervals based on start times. 
+Now check if the i1.start < i0.end
 
 TC: O(nlogn) as we are sorting
 SC:O(1)
