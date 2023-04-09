@@ -16,5 +16,5 @@ class HouseRobber():
             curr = max(prev2 + num, prev)
             prev2 = prev
             prev = curr
-            ans = max(ans, curr)
-        return ans
+
+        return curr

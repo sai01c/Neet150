@@ -1,52 +1,43 @@
 """
 https://leetcode.com/problems/minimum-interval-to-include-each-query/
 
-Brute force approach:  32/42 test cases
-
-we use two for loops - for every query we scan through all the intervals 
-then check if the range is satisfied and then add it to the minHeap
-after all the intervals are completed we retreive the first value (minimum)
-repeat the same process for all the queries. 
-
-TC: O(n*n)
-Sc: O(n)
-
 Optimal Approach:
 
-Tc: O(nlogn)
-I will never be able to do this
+Tc: O(nlogn + qlogq)
+sc - 
 """
 
+import heapq
 
 class Solution:
     def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
         res = []
-        for q in queries:
-            heap = []
-            for x, y in intervals:
-                if (q >= x and q <= y):
-                    heapq.heappush(heap, y-x+1)
-            if heap:
-                mini = heapq.heappop(heap)
-                res.append(mini)
+        dic = {}
+        heap = []
+        intervals.sort() #sort the intervals
+        i = 0 #notice i is outside for loop
+        for q in sorted(queries): #sorting the queries 
+            if q in dic: #this value is already computed so continue
+                continue 
+            
+            #instead of iterating through all intervals select only ones where q >= start
+            #both intervals and queries are sorted so this will work
+            while (i < len(intervals) and q >= intervals[i][0]):
+                s, e = intervals[i]
+                size = e - s + 1
+                heapq.heappush(heap, (size, e)) #append all of them into heap
+                i += 1 
+                #for next query we don't want to start from i = 0
+                
+            while heap and q > heap[0][1]: #remove the ones which doesn't satisfy q <= end
+                heapq.heappop(heap)
+                
+            if heap: #add to dic so that we can use later
+                dic[q] = heap[0][0]  #this is the minimum size
             else:
-                res.append(-1)
+                dic[q] = -1 
+            
+        for q in queries:
+            res.append(dic[q])
             
         return res
-
-class Solution:
-    def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
-        intervals.sort()
-        minHeap = []
-        res = {}
-        i = 0
-        for q in sorted(queries):
-            while i < len(intervals) and intervals[i][0] <= q:
-                l, r = intervals[i]
-                heapq.heappush(minHeap, (r - l + 1, r))
-                i += 1
-
-            while minHeap and minHeap[0][1] < q:
-                heapq.heappop(minHeap)
-            res[q] = minHeap[0][0] if minHeap else -1
-        return [res[q] for q in queries]

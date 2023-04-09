@@ -5,8 +5,8 @@ Approach - this is similar to closed islands, surrounding regions etc
 First cross the borders and mark the all connected 1 as 0 as these are not useful for us
 Now next iterate through the matrix and find number of 1's.
 
-Tc
-Sc
+Tc - O(m*n)
+Sc - O(m*n)
 
 """
 

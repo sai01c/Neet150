@@ -19,13 +19,12 @@ class Solution():
     
     def houseRobber1(self, nums):
         prev2, prev = 0, 0
-        ans = 0
+        curr = 0 #define curr first because if input is [0] for loop won't be executed
         for num in nums:
             curr = max(prev2 + curr, prev)
             prev2 = prev
             prev = curr
-            ans = max(ans, curr)
-        return ans
+        return curr
 
 
 
