@@ -29,11 +29,6 @@ def rotate(nums, k):
     return nums
 
 
-input = [1, 2, 3, 4, 5]
-x = 2
-output = [4, 5, 1, 2, 3]
-print(rotate(input, x))
-
 # rotate by 1
 input2 = [9, 8, 7, 6, 4, 2, 1, 3]
 output = [3, 9, 8, 7, 6, 4, 2, 1]
