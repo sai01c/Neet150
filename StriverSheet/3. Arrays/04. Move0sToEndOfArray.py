@@ -1,3 +1,12 @@
+"""
+https://leetcode.com/problems/move-zeroes/
+
+approach - 
+
+tc
+sc
+"""
+
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """

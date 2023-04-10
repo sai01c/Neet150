@@ -1,3 +1,12 @@
+"""
+https://leetcode.com/problems/sort-colors/
+
+Approach - this is Dutch national flag algorithm
+
+tc - O(n)
+sc - O(1)
+
+"""
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         """
@@ -18,5 +27,6 @@ class Solution:
                 
             else:
                 i += 1
+            
             
             

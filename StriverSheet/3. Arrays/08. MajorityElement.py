@@ -1,7 +1,13 @@
 """
 https://leetcode.com/problems/majority-element/
 
+Approach - this is very tricky algorithm. learn this algorithm
+
+tc - 
+sc - 
+
 """
+
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
@@ -23,7 +29,7 @@ class Solution:
             if num == element:
                 count += 1
         
-        if count > len(nums)//2:
+        if (count > len(nums)//2):
             return element
         else:
             return -1
