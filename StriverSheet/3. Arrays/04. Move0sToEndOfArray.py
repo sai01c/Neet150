@@ -1,10 +1,10 @@
 """
 https://leetcode.com/problems/move-zeroes/
 
-approach - 
+approach - if we see non-zero element just swap it to the left and increase left pointer by 1
 
-tc
-sc
+tc - O(n)
+sc - O(1)
 """
 
 class Solution:
