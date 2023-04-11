@@ -3,8 +3,8 @@ https://leetcode.com/problems/majority-element/
 
 Approach - this is very tricky algorithm. learn this algorithm
 
-tc - 
-sc - 
+tc - O(N)
+sc - O(1)
 
 """
 

@@ -1,7 +1,7 @@
 """
 https://leetcode.com/problems/max-consecutive-ones/
 
-Approach - iterate through the elements and increase counter by 1 if you see 1 else make it 0
+Approach - Iterate through the elements and increase counter by 1 if you see 1 else make it 0
 
 tc - O(n)
 sc - O(1)

@@ -1,7 +1,7 @@
 """
 https://leetcode.com/problems/missing-number/
 
-approach - calculate sum using n*n+1 / 2 then get the missing number
+Approach - calculate sum using (n * (n+1 / 2)) then get the missing number
 
 tc - O(n)
 sc - O(1)
