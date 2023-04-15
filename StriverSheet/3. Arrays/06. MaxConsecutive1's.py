@@ -2,6 +2,7 @@
 https://leetcode.com/problems/max-consecutive-ones/
 
 Approach - Iterate through the elements and increase counter by 1 if you see 1 else make it 0
+this is sliding window algoritm
 
 tc - O(n)
 sc - O(1)
@@ -17,6 +18,6 @@ class Solution:
                 count += 1 #increment counter by 1 because we had 0
                 ans = max(count, ans) #get the maximum of count and ans
             else:
-                count = 0 #initiate count to zero
+                count = 0 #initiate count to zero because we want our subarray to start again
         
         return ans

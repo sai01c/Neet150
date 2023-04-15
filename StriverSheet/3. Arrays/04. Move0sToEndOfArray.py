@@ -14,6 +14,6 @@ class Solution:
         """
         left = 0
         for right in range(len(nums)):
-            if nums[right] != 0:
+            if nums[right] != 0: #element is valid so swap
                 nums[left], nums[right] = nums[right], nums[left]
-                left += 1
+                left += 1 #increase the pointer by 1
