@@ -16,13 +16,8 @@ Therefore, the overall space complexity of the function is constant, and does no
 
 class Solution:
     def fourSum(self, nums, target):
-        # Sort the input array in ascending order.
         nums.sort() 
-        
-        # Initialize an empty list to store the result quadruplets.
         res = []
-        
-        # Store the length of the input array for convenience.
         n = len(nums)
         
         # Iterate over all possible first indices i.
@@ -37,14 +32,11 @@ class Solution:
                 if j > i + 1 and nums[j] == nums[j - 1]:
                     continue
                 
-                # Use two pointers l and r to find pairs of elements that sum to target.
                 l, r = j + 1, n - 1 
                 while l < r:
-                    # Compute the sum of the current quadruplet.
                     s = nums[i] + nums[j] + nums[l] + nums[r]
                     
                     if s == target:
-                        # If the sum matches the target, add the quadruplet to the result.
                         res.append([nums[i], nums[j], nums[l], nums[r]])
                         
                         # Move the left pointer to the next unique element.
@@ -53,11 +45,8 @@ class Solution:
                             l += 1
                             
                     elif s < target:
-                        # If the sum is too small, move the left pointer to the right.
                         l += 1
                     else:
-                        # If the sum is too large, move the right pointer to the left.
                         r -= 1
         
-        # Return the list of unique quadruplets that sum to the target.
         return res

@@ -78,3 +78,4 @@ array and use index as frequency. This will eliminate sorting the frequency. Eg:
 - In linked list, if you assign one pointer to head and shift that pointer. You can still go back to head by using another pointer. But, if you change the node.next using the first pointer it will remain same with second pointer as well.
 - To remove key, value from dic - dic[key].remove(value)
 - Use BFS if you want to calculate time, cost etc because in BFS we can add for loop and calculate all nodes at once. Eg - Rotten oranges, wall gates, word ladder etc.
+- To get negation of 0, 1 peform XOR operation with 1. 0 ^ 1 is 1 and 1 ^ 1 is 0
