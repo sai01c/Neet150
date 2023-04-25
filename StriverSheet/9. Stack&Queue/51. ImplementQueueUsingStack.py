@@ -4,6 +4,7 @@ https://leetcode.com/problems/implement-queue-using-stacks/
 approach - we use two stacks to implement queue.
 let us say we have to build a queue of [1,2,3,4] queue pop is 1.
 so we pop all the elements to right of 1 from our stack and add these elements to another stack then [4,3,2]
+return the last stack element - 1
 now, pop all the elements from second stack and append them back to initial stack then [2,3,4]
 
 tc - O(n)
