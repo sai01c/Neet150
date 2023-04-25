@@ -1,13 +1,21 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+"""
+https://leetcode.com/problems/palindrome-linked-list/
+
+Approach - go to the middle of the linked list using slow and fast pointers.
+then reverse the second half now iterate over the first and second lists and compare them to 
+see if they are equal
+
+tc - n
+sc - n
+
+"""
+
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         dummy = ListNode()
         dummy.next = head
         first = head
+        #go to middle using slow and fast pointers
         slow = dummy
         fast = head
         while fast and fast.next:
@@ -15,6 +23,7 @@ class Solution:
             fast = fast.next.next
         second = slow.next
         slow.next = None
+        #reverse the second half now
         prev = None
         while second:
             temp = second.next
@@ -23,6 +32,7 @@ class Solution:
             second = temp
         second = prev
         
+        #now compare first and second lists if they are equal
         while first and second:
             if first.val != second.val:
                 return False

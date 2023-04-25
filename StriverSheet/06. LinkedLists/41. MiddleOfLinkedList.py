@@ -1,8 +1,12 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+"""
+https://leetcode.com/problems/middle-of-the-linked-list/
+
+Approach - just go to middle of the linked list using slow and fast pointers
+
+tc - n
+sc - n
+"""
+
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode()

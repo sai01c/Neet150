@@ -1,8 +1,13 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+"""
+https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/
+
+approach - use two pointers slow and fast to go the middle of the linked list
+have a prev pointer behind slow and skip slow after you reach middle
+
+tc - n
+sc - n
+"""
+
 class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         slow = head
