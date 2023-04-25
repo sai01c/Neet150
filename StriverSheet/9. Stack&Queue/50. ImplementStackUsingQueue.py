@@ -18,7 +18,7 @@ class MyStack:
         self.q.append(x)
         
     def pop(self) -> int:
-        for i in range(len(self.q) - 1): #pop all left elements
+        for i in range(len(self.q) - 1): #pop all left elements except the last element
             val = self.q.popleft()
             self.q.append(val)
         return self.q.popleft() #pop last left element
