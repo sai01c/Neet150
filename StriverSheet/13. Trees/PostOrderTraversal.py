@@ -1,10 +1,10 @@
 """
 https://leetcode.com/problems/binary-tree-postorder-traversal/
 
-approach - 
+approach - use general stacka and add left and right subtrees. reverse the res at the end.
 
-tc
-sc
+tc - n
+sc - n
 """
 
 class Solution:
