@@ -31,7 +31,9 @@ def func(strs):
         for char in string:
             count[ord(char) - ord('a')] += 1
         dic[tuple(count)].append(char)
-
+        #we are changing from list to tuple because it is immutable
+        #in dic we can only have immutable data structures as keys
+        #eg - int, string, tuple
     return dic.values()
 
 """

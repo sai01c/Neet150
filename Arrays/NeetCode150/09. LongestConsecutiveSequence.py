@@ -23,6 +23,3 @@ def function1(nums):
             max_streak = max(current_streak, max_streak)
     return max_streak
 
-
-numss = [100, 4, 200, 1, 3, 2]
-print(function1(numss))

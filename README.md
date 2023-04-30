@@ -80,3 +80,4 @@ array and use index as frequency. This will eliminate sorting the frequency. Eg:
 - Use BFS if you want to calculate time, cost etc because in BFS we can add for loop and calculate all nodes at once. Eg - Rotten oranges, wall gates, word ladder etc.
 - To get negation of 0, 1 peform XOR operation with 1. 0 ^ 1 is 1 and 1 ^ 1 is 0
 - Use Zip function to compare two strings. Eg: a = 'sai' b = 'sha' for i, j in zip(a,b) gives i j values as a s, a h, i a
+- In dic, we can only have immutable data type as keys - int , string , tuple
