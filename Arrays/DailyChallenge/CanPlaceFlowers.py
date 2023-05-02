@@ -4,6 +4,9 @@ https://leetcode.com/problems/can-place-flowers/
 
 Approach: if num is 0, if left of it and right of it are zero then we add 1.
 we might also need to check boundaries. 
+
+tc - n
+sc - n
 """
 
 def canPlaceFlowers(nums, n):

@@ -9,6 +9,12 @@ length of the dic will also be length of the word
 Then we need to sort based on the descending order of the arrays
 if two arrays are same then we choose the smallest alphabet
 
+{
+    'A': [5, 0, 0], 
+    'B': [0, 2, 3], 
+    'C': [0, 3, 2]
+}
+
 Tc - n^2
 Sc - n
 
