@@ -9,8 +9,7 @@ Because you are only allowed to have 2 types. Handle edge case if count is 0, th
 Now increase the left pointer. 
 For each iteration, create a variable = 0 and add the two values from the dict. Now, use max condition to get the maximum of all the iterations.
 
-Tc: for + while but this was given as O(n) in stack question by NeetCode. 
-But, I think it is n^2 as in the while loop will run as long as len is more than 2. 
+Tc: 2n
 Sc: O(n) 
 
 """
@@ -22,14 +21,14 @@ class Solution:
         for r in range(len(fruits)):
             dic[fruits[r]] += 1
             
-            while len(dic) > 2:
+            if len(dic) > 2:
                 dic[fruits[l]] -= 1
                 if dic[fruits[l]] == 0:
                     del dic[fruits[l]]
                 l += 1
             
             temp = 0
-            for v in dic.values():
+            for v in dic.values(): #this is O(2) constant
                 temp += v
             
             res = max(res, temp)

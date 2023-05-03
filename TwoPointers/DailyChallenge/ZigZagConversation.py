@@ -25,6 +25,8 @@ For, middle rows, we add both initial increment and new increment.
 
 Tc: O(number of rows * len(s)
 
+TODO
+
 """
 
 

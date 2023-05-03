@@ -1,6 +1,8 @@
 """
 https://leetcode.com/problems/naming-a-company/
 
+TODO
+
 Approach: This is very tricky question. I first solved using two for loops with i and j iterating over the array in n^2. This gave TLE.
 Create a hashset with key as first string, value as the rest of the string. 
 using hashset instead of hashmap with array because set search is O(1).

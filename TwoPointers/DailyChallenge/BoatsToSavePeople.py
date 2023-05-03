@@ -1,7 +1,8 @@
 """
 https://leetcode.com/problems/boats-to-save-people/
 
-Approach - Here, main logic is we can add only two people for one boat. we need the minimum number of boats
+Approach - Here, main logic is we can add only two people for one boat. 
+we need the minimum number of boats
 we sort the array and add the least and highest to one boat
 
 tc O(nlogn)
