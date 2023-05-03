@@ -14,24 +14,24 @@ But, I think it is n^2 as in the while loop will run as long as len is more than
 Sc: O(n) 
 
 """
-
-def function(fruits):
-  left = 0
-  res = 0
-  count = {}
-  
-  for right in range(len(fruits)):
-    count[fruits[right]] = count.get(fruits[right]], 0) + 1
-    
-    while len(count) > 2:
-      count[fruits[left]] -= 1
-      if count[fruits[left]] == 0: del count[fruits[left]]
-      left += 1
-      
-    temp = 0
-    for v in count.values():
-      temp += v
-      
-    res = max(res, temp)
-    
-  return res
+class Solution:
+    def totalFruit(self, fruits: List[int]) -> int:
+        l = 0
+        dic = defaultdict(int)
+        res = 0
+        for r in range(len(fruits)):
+            dic[fruits[r]] += 1
+            
+            while len(dic) > 2:
+                dic[fruits[l]] -= 1
+                if dic[fruits[l]] == 0:
+                    del dic[fruits[l]]
+                l += 1
+            
+            temp = 0
+            for v in dic.values():
+                temp += v
+            
+            res = max(res, temp)
+        
+        return res

@@ -9,6 +9,8 @@ subtract the maximum height - current height
 
 TC: O(n) while loop
 SC: O(1) only pointers
+
+TODO
 """
 
 

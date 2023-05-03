@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/minimum-window-substring/submissions/
+https://leetcode.com/problems/minimum-window-substring/
 
 Approach: First, we create a count dict for t string. 
 using sliding window technique, we create new count dict for substring in s
