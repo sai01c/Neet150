@@ -1,9 +1,7 @@
 """
 https://leetcode.com/problems/rotate-list/description/
 
-Approach - 
-
-TODO
+Approach - using rotate array pattern 
 
 Tc
 Sc
@@ -50,3 +48,48 @@ class Solution:
             prev = curr
             curr = temp
         return prev
+    
+"""
+Optimal solution - Neetcode
+
+
+tc
+sc
+"""
+
+class Solution:
+    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        if not head:
+            return None
+        curr = head
+        total = 0
+        #find total nodes
+        while curr:
+            total += 1
+            curr = curr.next
+        
+        #find effective K
+        k = k % total
+        if k == 0:
+            return head
+        
+        #find pivot node
+        curr = head
+        temp = total - k
+        while curr and temp > 1:
+            curr = curr.next
+            temp -= 1
+        
+        groupNext = curr.next
+        curr.next = None
+        
+        #move second to last node and shift the pointers
+        first = head
+        second = groupNext
+        while second.next:
+            second = second.next
+        second.next = first
+        
+        return groupNext
+        
+        
