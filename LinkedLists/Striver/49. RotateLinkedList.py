@@ -1,6 +1,12 @@
 """
 https://leetcode.com/problems/rotate-list/description/
 
+Approach - 
+
+TODO
+
+Tc
+Sc
 """
 
 class Solution:
