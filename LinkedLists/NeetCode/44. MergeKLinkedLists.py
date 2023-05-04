@@ -5,8 +5,8 @@ Approach: we use the merge 2 lists method.
 each iteration we take two lists and append it as 1 to the original lists. 
 Repeat until the original lists just has one list.
 
-TC: O(n^2) TODO
-SC: O(n)
+TC: O(N logK) N is the total number of nodes. K is the number of linked lists
+SC: O(n) creating array
 """
 
 class ListNode:

@@ -5,14 +5,11 @@ Approach: we will find kth node each iteration and reverse linked list until thi
 attach previous and next nodes. use groupPrev and groupNext pointers
 read comments 
 
-Tc - O(n), sc - O(n) creating dummy node
-"""
+Tc - O(n), 
+sc - O(n) creating dummy node
 
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+TODO
+"""
 
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:

@@ -8,6 +8,8 @@ maintain LRU
 
 Tc O(1) get and put
 Sc O(n) map, linked list
+
+TODO
 """
 
 class Node:
