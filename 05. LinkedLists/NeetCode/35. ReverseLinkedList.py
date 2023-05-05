@@ -6,7 +6,7 @@ First, we shift the pointer from current to previous.
 Now, current becomes prev and the actual next (temp) becomes current
  
 TC O(n) as we are visiting all the nodes once
-SC O(n) why TODO
+SC O(1) 
 
 """
 
@@ -27,7 +27,3 @@ class Solution:
             prev = curr #prev should be assigned first
             curr = temp
         return prev
-
-"""
-Recursive solution - TODO
-"""

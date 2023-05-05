@@ -7,6 +7,8 @@ Repeat until the original lists just has one list.
 
 TC: O(N logK) N is the total number of nodes. K is the number of linked lists
 SC: O(n) creating array
+
+tc TODO
 """
 
 class ListNode:

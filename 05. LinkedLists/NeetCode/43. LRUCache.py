@@ -7,9 +7,8 @@ we use two functions delete and insert. we always delete and insert for all meth
 maintain LRU
 
 Tc O(1) get and put
-Sc O(n) map, linked list
+Sc O(capacity) map is of size capacity
 
-TODO
 """
 
 class Node:

@@ -6,7 +6,7 @@ First, we compare the l1 and l2 value and append it to the dummy node.
 Now, if any of the l1 or l2 are remaining we append the pointer to them. 
 
 Tc: O(m+n) as we are just merging here
-Sc: O(1) 
+Sc: O(1) size of dummy node is independent of size of input
 """
 
 class ListNode:

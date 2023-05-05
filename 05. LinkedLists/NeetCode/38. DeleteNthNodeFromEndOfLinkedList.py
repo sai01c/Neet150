@@ -8,7 +8,7 @@ and then move both of them such that right is null
 now remove the node
 
 TC: O(n)
-Sc: O(n)
+Sc: O(1)
 """
 
 def __init__(self, val=0, next=None):

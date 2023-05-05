@@ -4,8 +4,8 @@ https://leetcode.com/problems/odd-even-linked-list/
 approach - create two dummy nodes and attach them to first and second nodes.
 now increase the pointers by two nodes and attach them
 
-tc
-sc
+tc - n
+sc - 1
 """
 
 class Solution:

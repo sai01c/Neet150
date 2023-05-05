@@ -6,7 +6,7 @@ then reverse the second half now iterate over the first and second lists and com
 see if they are equal
 
 tc - n
-sc - n
+sc - 1
 
 """
 

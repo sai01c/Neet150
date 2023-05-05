@@ -5,7 +5,7 @@ approach - use two pointers slow and fast to go the middle of the linked list
 have a prev pointer behind slow and skip slow after you reach middle
 
 tc - n
-sc - n
+sc - 1
 """
 
 class Solution:

@@ -6,7 +6,7 @@ attach previous and next nodes. use groupPrev and groupNext pointers
 read comments 
 
 Tc - O(n), 
-sc - O(n) creating dummy node
+sc - O(1) 
 
 TODO
 """

@@ -4,7 +4,7 @@ https://leetcode.com/problems/linked-list-cycle-ii/
 Approach - use set to find duplicate if node is in the set then this is the starting point
 
 tc - n
-sc - n
+sc - n set
 
 """
 

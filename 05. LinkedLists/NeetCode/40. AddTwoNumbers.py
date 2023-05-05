@@ -4,7 +4,8 @@ https://leetcode.com/problems/add-two-numbers/
 Approach: reverse addition - do addition from left to right, you'll understand better.
 if sum is 10, node will be 0 and 1 will carry to next iteration.
 
-Tc: O(n) Sc: O(n)
+Tc: O(max(l1, l2))
+Sc: O(1)
 
 """
 

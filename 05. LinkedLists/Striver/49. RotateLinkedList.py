@@ -3,8 +3,8 @@ https://leetcode.com/problems/rotate-list/description/
 
 Approach - using rotate array pattern 
 
-Tc
-Sc
+Tc - n
+Sc - 1
 """
 
 class Solution:
@@ -53,8 +53,8 @@ class Solution:
 Optimal solution - Neetcode
 
 
-tc
-sc
+tc- n
+sc - 1
 """
 
 class Solution:

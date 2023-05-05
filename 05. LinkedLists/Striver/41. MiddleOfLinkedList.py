@@ -4,7 +4,7 @@ https://leetcode.com/problems/middle-of-the-linked-list/
 Approach - just go to middle of the linked list using slow and fast pointers
 
 tc - n
-sc - n
+sc - 1
 """
 
 class Solution:

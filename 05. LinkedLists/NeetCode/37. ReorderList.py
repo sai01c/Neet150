@@ -7,7 +7,7 @@ First half should be normal and second should be reversed.
 merge both the halves. 
 
 Tc: O(n) we are iterating multiple times but it is n+n+n
-Sc: O(n)
+Sc: O(1) dummy node does not depend on size of input
 """
 
 class ListNode:
