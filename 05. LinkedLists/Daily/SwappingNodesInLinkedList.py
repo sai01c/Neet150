@@ -6,8 +6,8 @@ have one loop for find the k element from the start
 another loop for finding k element from the end.
 swap those two elements
 
-tc
-sc
+tc - n
+sc - 1
 """
 
 

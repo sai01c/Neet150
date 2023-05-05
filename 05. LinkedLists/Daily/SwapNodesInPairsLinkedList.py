@@ -3,8 +3,8 @@ https://leetcode.com/problems/swap-nodes-in-pairs/
 
 approach - just manipulating the pointers
 
-tc
-sc
+tc - n
+sc - 1
 
 instead, we can just use reverse nodes in K groups to do this
 

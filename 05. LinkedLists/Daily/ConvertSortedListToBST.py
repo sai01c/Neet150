@@ -9,8 +9,8 @@ elements after middle witll be root.right
 base condition - if we don't get linkedlist we return None
 also if element.next is None we return TreeNode(element.val)
 
-Tc: 
-Sc: 
+Tc: n logn TODO
+Sc: n
 """
 
 def sortedListToBST(head):
@@ -35,6 +35,3 @@ def sortedListToBST(head):
     root.right = sortedListToBST(second)
 
     return root
-
-dic = {1: 1}
-print(max(dic.values()))
