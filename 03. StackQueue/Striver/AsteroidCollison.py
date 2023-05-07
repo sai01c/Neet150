@@ -4,6 +4,7 @@ https://leetcode.com/problems/asteroid-collision/
 approach - monotonic stack because we need to compare with previous elements
 
 tc - n
+while loop is constant because it does not depend on the input size 
 sc - n
 """
 
@@ -27,3 +28,9 @@ class Solution:
                     stack.append(val)
     
         return stack
+
+"""
+The while loop in this implementation has a constant time complexity because it has a fixed number of iterations. 
+The loop continues to run as long as there are at least two elements in the stack and the last element is negative while the second to last element is positive. 
+These conditions do not depend on the size of the input list, and so the number of iterations of the while loop is independent of the size of the input.
+"""

@@ -12,23 +12,22 @@ sc - n
 
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        stack = []
         dic = {}
-        res = [-1] * len(nums1)
         for i in range(len(nums1)):
             dic[nums1[i]] = i
-        stack = []
+        res = [-1] * len(nums1)
         
         for i in range(len(nums2)):
-            
-            while stack and nums2[i] > stack[-1]:
+            num = nums2[i]
+            while stack and num > stack[-1]:
                 val = stack.pop()
                 ind = dic[val]
-                res[ind] = nums2[i]
+                res[ind] = num
+                
+            if num in dic:
+                stack.append(num)
             
-            if nums2[i] in dic:
-                stack.append(nums2[i])
-        
         return res
-            
                     
         

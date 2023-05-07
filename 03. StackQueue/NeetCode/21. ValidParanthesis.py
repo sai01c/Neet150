@@ -33,6 +33,3 @@ def isValid(s: str) -> bool:
     return True if not stack else False  # we may have single bracket in stack
 # if our stack is empty means we have popped everything and they all are equal.
 
-
-s = "()[]{}"
-print(isValid(s))

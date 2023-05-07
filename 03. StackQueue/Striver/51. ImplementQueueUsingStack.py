@@ -22,11 +22,15 @@ class MyQueue:
         self.stack.append(x)
 
     def pop(self) -> int:
+        #pop all elements except last
         for i in range(len(self.stack)-1):
             val = self.stack.pop()
             self.temp.append(val)
+        
+        #pop last element
         ans = self.stack.pop()
         
+        #add popped elements back to queue
         for i in range(len(self.temp)):
             val = self.temp.pop()
             self.stack.append(val)
