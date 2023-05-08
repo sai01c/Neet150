@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 
 Approach: binary search as they are sorted. 
 return the left element as we need the minimum 

@@ -17,6 +17,9 @@ class Solution:
         while l < r:
             #add extra condition's when we have duplicate's
             #when we have left and right duplicate's
+
+            #this while loop only executes when there is a duplicate value
+            #so this doesn't count for tc
             while l < r and nums[l] == nums[l+1]:
                 l += 1
                 

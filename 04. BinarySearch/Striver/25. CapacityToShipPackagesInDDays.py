@@ -1,10 +1,15 @@
 """
 https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 
-Approach - 
+Approach: here, we have to find capacity which will be between two intervals. 
+minCap, maxCap and it is sorted between these two, so binary search
+have generic binary search but every time after computing mid, to shift pointers
+we will calculate did our maxCap is satisfying the days they gave based on that we
+shift our pointers
 
-tc - 
-sc - 
+- this is similar to koko eating banana's
+
+Tc: O(n logn) sc - O(1)
 
 """
 
@@ -12,10 +17,7 @@ sc -
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         l = max(weights)
-        total = 0
-        for w in weights:
-            total += w
-        r = total
+        r = sum(weights)
         
         while l <= r:
             m = (l + r) // 2

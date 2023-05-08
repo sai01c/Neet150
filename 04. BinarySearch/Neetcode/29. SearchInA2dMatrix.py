@@ -20,7 +20,7 @@ def search2dMatrix(matrix, target):
             b = midRow - 1
         elif target > matrix[midRow][-1]:
             t = midRow + 1
-        else:  # why use break statement here - this condition means element is in the row 'm'
+        else:  # this condition means element is in the row 'm'
             break
 
     l = 0

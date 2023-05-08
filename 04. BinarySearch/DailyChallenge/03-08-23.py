@@ -1,7 +1,4 @@
 """
-https://leetcode.com/problems/koko-eating-bananas/
-
-already part of neetcode 150
 
 https://leetcode.com/problems/maximum-product-of-three-numbers/
 
