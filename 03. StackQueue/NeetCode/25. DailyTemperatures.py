@@ -5,6 +5,9 @@ Approach: we add the temp to a stack.
 Now if the incoming temp is more than stack temp we pop current and
 get the diff of the index. 
 
+
+this is basically next greater element
+
 Tc: O(n) only for loop
 Sc: O(n) stack
 """

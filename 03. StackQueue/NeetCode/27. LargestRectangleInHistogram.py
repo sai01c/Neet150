@@ -7,8 +7,10 @@ but if heights may be decreasing or increasing
 if height is decreasing we can stop including that height and calculate the area for that. 
 So, consider a stack and if the height is decreasing remove that height and calculate area
 
-Tc: O(n) for loop accoring to neetcode. But, we used a while loop inside for loop so it should be n^2. 
+Tc: O(n)
 Sc: O(n) for stack space. 
+
+TODO
 """
 
 
