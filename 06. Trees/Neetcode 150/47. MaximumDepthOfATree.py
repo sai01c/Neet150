@@ -26,21 +26,22 @@ def depth(root):
     r = depth(root.right)
     return (1 + max(l, r))
 
-
 class Solution:
-    def maxDepth(self, root) -> int:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root: return 0
+        
         q = collections.deque()
-        q.append(root)
-        res = []
-
+        q.append((root, 1))
+        res = float('-inf')
+        
         while q:
-            levels = []
             for i in range(len(q)):
-                node = q.popleft()
+                node, ind = q.popleft()
                 if node:
-                    levels.append(node.val)
-                    q.append(node.left)
-                    q.append(node.right)
-            if levels:
-                res.append(levels)
-        return len(res)
+                    if not node.left and not node.right:
+                        res = max(res, ind)
+                        
+                    q.append((node.left, ind+1))
+                    q.append((node.right, ind+1))
+        return res
+
