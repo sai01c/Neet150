@@ -11,18 +11,42 @@ O(n) traverse every node once
 
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        self.output = 0
-        return self.helper(root, root.val) #initiate root value as maxi
         
-    def helper(self, root, maxvalue):
-        if not root: #base case - no root 
-            return 0
-        #if root value is greater than path maxi then we found new maxi
-        if root.val >= maxvalue: 
-            self.output += 1
-            maxvalue = max(root.val, maxvalue)
+        def dfs(root, maxi):
+            res = 0
+            if not root:
+                return 0
+            if root.val >= maxi:
+                res += 1
+                maxi = root.val
+            res += dfs(root.left, maxi)
+            res += dfs(root.right, maxi)
             
-        self.helper(root.left, maxvalue) #dfs on left and right nodes
-        self.helper(root.right, maxvalue)
+            return res
         
-        return self.output
+        return dfs(root, root.val)
+    
+
+class Solution:
+    def goodNodes(self, root: TreeNode) -> int:
+        res = 0
+        q = collections.deque()
+        maxi = root.val
+        q.append((root, root.val))
+        while q:
+            for i in range(len(q)):
+                node, maxi = q.popleft()
+                if node:
+                    if node.val >= maxi:
+                        res += 1
+                        maxi = node.val
+                    if node.left:
+                        q.append((node.left, maxi))
+                    if node.right:
+                        q.append((node.right, maxi))
+        
+        return res
+                
+                
+                
+        

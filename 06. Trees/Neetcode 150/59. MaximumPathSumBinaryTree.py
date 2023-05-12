@@ -10,6 +10,8 @@ We use the same height function. But make couple of modifications
 
 Tc: O(n) traverse every node once. 
 Sc: O(n) recursion stack
+
+TODO
 """
 
 class Solution:
