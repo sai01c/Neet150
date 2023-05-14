@@ -19,4 +19,6 @@ class Solution:
         node.right = self.constructFromPrePost(preorder[leftSize+1:], postorder[leftSize:-1])
         
         return node
-        
+    
+
+    0 or 0 is 0
