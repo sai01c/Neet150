@@ -81,3 +81,5 @@ array and use index as frequency. This will eliminate sorting the frequency. Eg:
 - To get negation of 0, 1 peform XOR operation with 1. 0 ^ 1 is 1 and 1 ^ 1 is 0
 - Use Zip function to compare two strings. Eg: a = 'sai' b = 'sha' for i, j in zip(a,b) gives i j values as a s, a h, i a
 - In dic, we can only have immutable data type as keys - int , string , tuple
+- If we want to remove adjacent elements always consider stack first
+- If paranthesis problems, always do stack first

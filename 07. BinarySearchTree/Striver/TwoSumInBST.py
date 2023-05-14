@@ -9,20 +9,17 @@ Tc
 Sc
 """
 
-def func(root, k):
-    visit = set()
-    def helper(root):
-        if not root:
-            return
-        if root.val in visit:
-            return True
-        remain = k - root.val
-        visit.add(remain)
-
-        if helper(root.left):
-            return True
-        
-        if helper(root.right):
-            return True
-        
+class Solution:
+    def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
+        dic = {}
+        curr = root
+        while curr:
+            remain = k - curr.val
+            if remain in dic:
+                return True
+            dic[curr.val] = 1
+            if remain < curr.val:
+                curr = curr.left
+            if remain > curr.val:
+                curr = curr.right
         return False
