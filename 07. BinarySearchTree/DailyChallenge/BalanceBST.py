@@ -1,6 +1,8 @@
 """
 https://leetcode.com/problems/balance-a-binary-search-tree/
 
+given is a BST so inorder will give sorted order
+now create a new BST with this sorted order put root at middle so we can have balance BST
 """
 
 class Solution:
