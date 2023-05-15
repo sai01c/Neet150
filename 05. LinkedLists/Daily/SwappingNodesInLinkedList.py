@@ -2,37 +2,26 @@
 https://leetcode.com/problems/swapping-nodes-in-a-linked-list/
 
 Approach - 
-have one loop for find the k element from the start
-another loop for finding k element from the end.
-swap those two elements
+first go to the first node
+from here try to reach end node. maitain two pointers one from head and one from first
+one will reach the end other will stop at the kth node from end. 
 
 tc - n
 sc - 1
 """
 
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-
 class Solution:
-    def swapNodes(self, head: ListNode, k: int) -> ListNode:
-        start = head  # assigning head here but we considered start as a pointer?
-        end = head
-        temp = head
-        i = 1
-        while i < k:
-            start = start.next
-            i += 1
-        total = 0
-        while temp:
-            temp = temp.next
-            total += 1
-        j = 0
-        while j < total - k:
-            end = end.next
-            j += 1
-        start.val, end.val = end.val, start.val
+    def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        first = head
+        for i in range(k-1):
+            first = first.next
+        last = head
+        fast = first
+        while fast and fast.next:
+            fast = fast.next
+            last = last.next
+        
+        first.val, last.val = last.val, first.val
         return head
+        
+        
