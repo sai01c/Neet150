@@ -12,20 +12,23 @@ instead, we can just use reverse nodes in K groups to do this
 
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        first = head
         dummy = ListNode()
         prev = dummy
-        dummy.next = head
-        curr = head
+        prev.next = head
         
-        while curr and curr.next:
-            second = curr.next
-            groupNext = curr.next.next
+        while first and first.next:
+            second = first.next
+            third = second.next
             
-            second.next = curr
-            curr.next = groupNext #not understood why we require this line
             prev.next = second
+            second.next = first
+            first.next = third
             
-            prev = curr
-            curr = groupNext
-            
+            prev = first
+            first = third
+        
         return dummy.next
+
+            
+            
