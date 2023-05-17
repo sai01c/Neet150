@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/kth-largest-element-in-a-stream/submissions/
+https://leetcode.com/problems/kth-largest-element-in-a-stream/
 
 APPROACH: 
 
