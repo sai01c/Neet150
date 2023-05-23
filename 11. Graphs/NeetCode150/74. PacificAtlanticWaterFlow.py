@@ -11,40 +11,80 @@ TC: O(m*n) TODO
 Sc: O(n)
 """
 
-def pacAtl(heights):
-    rows = len(heights)
-    cols = len(heights[0])
-    pac = set()
-    atl = set()
-    res = []
-
-    def dfs(r, c, visit, prevHeight):
-        if (r not in range(rows) or
-            c not in range(cols) or 
-            (r,c) in visit or
-            heights[r][c] < prevHeight):
-            return
-        directions = [[0,1], [-1,0], [0,-1], [1,0]]
-        visit.add((r,c))
-        for dr, dc in directions:
-            nr, nc = r+dr, c+dc
-            dfs(nr, nc, visit, heights[r][c])
-    #notice we are not removing from set.                                         
+class Solution:
+    def pacificAtlantic(self, grid: List[List[int]]) -> List[List[int]]:
+        rows = len(grid)
+        cols = len(grid[0])
+        pac = set()
+        atl = set()
+        
+        def dfs(r, c, visit, prev):
+            if (r not in range(rows) or c not in range(cols) or 
+                (r,c) in visit or grid[r][c] < prev):
+                return
+            visit.add((r, c))
+            directions = [[0,1],[0,-1],[1,0],[-1,0]]
+            for dr, dc in directions:
+                nr, nc = r + dr, c + dc
+                dfs(nr, nc, visit, grid[r][c])
+                
+        for r in range(rows):
+            for c in range(cols):
+                if r == 0 or c == 0:
+                    dfs(r, c, pac, grid[r][c])
+                    
+        for r in range(rows):
+            for c in range(cols):
+                if r == rows - 1 or c == cols - 1:
+                    dfs(r, c, atl, grid[r][c])
+                    
+        res = []
+        for r in range(rows):
+            for c in range(cols):
+                if (r, c) in atl and (r,c) in pac:
+                    res.append([r, c])
+        
+        return res
     
-    for r in range(rows):
-        dfs(r, 0, pac, heights[r][0]) #first column
-        dfs(r, cols-1, atl, heights[r][cols-1]) #last column
 
-    for c in range(cols):
-        dfs(0, c, pac, heights[0][c]) #first row
-        dfs(rows-1, c, atl, heights[rows-1][c]) #last row
-
-    #if exisiting in both the sets then we have the answer
-    for r in range(rows):
-        for c in range(cols):
-            if (r,c) in atl and (r,c) in pac:
-                res.append([r,c])
-
-heights = [[1, 2, 2, 3, 5], [3, 2, 3, 4, 4], [
-    2, 4, 5, 3, 1], [6, 7, 1, 4, 5], [5, 1, 1, 2, 4]]
-print(pacAtl(heights))
+class Solution:
+    def pacificAtlantic(self, grid: List[List[int]]) -> List[List[int]]:
+        rows = len(grid)
+        cols = len(grid[0])
+        pac = set()
+        atl = set()
+        directions = [[0,1],[0,-1],[1,0],[-1,0]]
+        
+        def bfs(r, c, visit):
+            q = deque()
+            q.append((r, c))
+            visit.add((r, c))
+            while q:
+                x, y = q.popleft()
+                for dr, dc in directions:
+                    nr, nc = x + dr, y + dc
+                    if (
+                    nr in range(rows) and 
+                    nc in range(cols) and 
+                    (nr,nc) not in visit and 
+                    grid[nr][nc] >= grid[x][y]):
+                        visit.add((nr, nc))
+                        q.append((nr, nc))
+        
+        for r in range(rows):
+            for c in range(cols):
+                if r == 0 or c == 0:
+                    bfs(r, c, pac)
+                    
+        for r in range(rows):
+            for c in range(cols):
+                if r == rows - 1 or c == cols - 1:
+                    bfs(r, c, atl)
+                    
+        res = []
+        for r in range(rows):
+            for c in range(cols):
+                if (r, c) in atl and (r,c) in pac:
+                    res.append([r, c])
+        
+        return res

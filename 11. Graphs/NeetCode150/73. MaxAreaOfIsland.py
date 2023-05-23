@@ -1,4 +1,7 @@
 """
+https://leetcode.com/problems/max-area-of-island/
+
+
 Approach: we apply either bfs or dfs and add to visit if there's 1 
 we extend the island if there's 1. we stop if all the four directions are 0
 and return area
@@ -6,7 +9,7 @@ and return area
 now apply starting at 0 index and check for max area. 
 
 TC: O(m*n)
-
+sc: 
 """
 
 class Solution:
