@@ -5,6 +5,7 @@ Approach - we do regualar course schedule where we check for cycle but we add tw
 first is add visit set so we don't add repeated nodes to our topological sort
 second is we maintain array to add topological sort
 
+this is not topological sort this is exactly opposite
 tc - O(n) as we visit every node once
 sc - n
 """

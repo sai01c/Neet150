@@ -53,3 +53,46 @@ class Solution:
             for c in range(cols):
                 if board[r][c] == "T":
                     board[r][c] = "O"
+
+
+#BFS
+
+class Solution:
+    def solve(self, grid: List[List[str]]) -> None:
+        """
+        Do not return anything, modify board in-place instead.
+        """
+        rows = len(grid)
+        cols = len(grid[0])
+        visit = set()
+        q = deque()
+        
+        for r in range(rows):
+            for c in range(cols):
+                if (grid[r][c] == "O" and (r in [0, rows-1] or c in [0, cols-1])):
+                    q.append((r, c))
+                    visit.add((r, c))
+        
+        while q:
+            x, y = q.popleft()
+            grid[x][y] = "NC"
+            directions = [[0,1],[0,-1],[1,0],[-1,0]]
+            for dr, dc in directions:
+                nr, nc = x + dr, y + dc
+                if nr in range(rows) and nc in range(cols) and grid[nr][nc] == "O" and (nr, nc) not in visit:
+                    q.append((nr,nc))
+                    visit.add((nr, nc))
+        
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == "O":
+                    grid[r][c] = "X"
+        
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == "NC":
+                    grid[r][c] = "O"
+        
+                    
+                    
+        

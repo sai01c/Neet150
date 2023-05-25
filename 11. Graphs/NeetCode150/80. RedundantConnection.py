@@ -20,17 +20,18 @@ class Solution:
             #initite new set because we want to check for cycle fresh after appending this edge to dic
             cycle = set() 
             
-            if self.dfs(s, e, dic, cycle) == False and [e, s] in edges: 
+            if self.dfs(s, e, dic, cycle) == False and [s, e] in edges: 
                 #if cycle exists and this edge in our input
-                res.append([e, s])
                 #we want to remove this edge from dic because even though if next edges 
                 #don't form a cycle - they will result in cycle because of this edge
-                dic[s].remove(e) 
-                dic[e].remove(s)
-            
-            if self.dfs(e, s, dic, cycle) == False and [s, e] in edges: 
                 res.append([s, e])
                 dic[s].remove(e)
+                dic[e].remove(s)
+                
+            
+            if self.dfs(e, s, dic, cycle) == False and [e, s] in edges: 
+                res.append([e, s])
+                dic[s].remove(e) 
                 dic[e].remove(s)
         
         return res[-1] #we need the last corrupted edge
@@ -50,4 +51,40 @@ class Solution:
         return True
             
         
+"""
+union find algorithm - not sure why this one works 
+
+TODO
+
+"""
+
+class Solution:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+        parent = [-1] * (len(edges) + 1)
+        for n in range(1, len(edges)+1):
+            parent[n] = n
+        rank = [1] * (len(edges) + 1)
         
+        def find(n):
+            p = parent[n]
+            while p != parent[p]:
+                parent[p] = parent[parent[p]]
+                p = parent[p]
+            return p
+        
+        def union(n1, n2):
+            p1 = find(n1)
+            p2 = find(n2)
+            if p1 == p2:
+                return False
+            if rank[p1] > rank[p2]:
+                parent[p2] = p1
+                rank[p1] += rank[p2]
+            else:
+                parent[p1] = p2
+                rank[p2] += rank[p1]
+            return True
+            
+        for s, e in edges:
+            if union(s, e) == False:
+                return [s,e]
