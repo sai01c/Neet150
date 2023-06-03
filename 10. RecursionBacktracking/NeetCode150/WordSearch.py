@@ -15,6 +15,7 @@ def wordSearch(board, word):
     directions = [[0,1], [0,-1], [1,0], [-1,0]]
 
     def dfs(r, c, i):
+        #have this check first 
         if i == len(word):
             return True
         if (r not in range(rows) or
@@ -28,7 +29,7 @@ def wordSearch(board, word):
             if dfs(nr, nc, i+1):
                 return True
 
-        visit.remove((r,c)) #we are removing becuase we can't use same letter more than once
+        visit.remove((r,c)) 
 
     for r in rows:
         for c in cols: #tc - O(m*n) for these two loops

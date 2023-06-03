@@ -20,7 +20,10 @@ class Solution:
             
         def backtrack(r):
             if r >= n:
-                copy = ["".join(row) for row in board]
+                copy = []
+                for i in board:
+                    temp = "".join(i)
+                    copy.append(temp)
                 res.append(copy)
                 return
             

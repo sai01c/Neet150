@@ -44,18 +44,18 @@ TODO
 
 class Solution:
     def findMaximizedCapital(self, k: int, w: int, profits: List[int], capital: List[int]) -> int:
+        minCap = []
         maxProfit = []
-        minCapacity = []
-        for c, p in zip(capital, profits):
-            minCapacity.append((c, p))
-        heapq.heapify(minCapacity)
+        for p, c in zip(profits, capital):
+            heapq.heappush(minCap, (c, p))
         
         for i in range(k):
-            while minCapacity and w >= minCapacity[0][0]:
-                c, p = heapq.heappop(minCapacity)
+            while minCap and w >= minCap[0][0]:
+                c, p = heapq.heappop(minCap)
                 heapq.heappush(maxProfit, -1 * p)
-            if not maxProfit:
-                break
+
+            if maxProfit:
+                p = -1 * heapq.heappop(maxProfit)
+                w += p
             
-            w += -1 * heapq.heappop(maxProfit)
         return w
