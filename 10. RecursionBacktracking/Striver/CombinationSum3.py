@@ -7,7 +7,6 @@ class Solution:
         res = []
         sub = []
         nums = [1,2,3,4,5,6,7,8,9]
-        visit = set()
         
         def backtrack(i, total):
             if total==n and len(sub) == k:
