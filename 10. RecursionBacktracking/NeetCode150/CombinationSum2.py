@@ -5,7 +5,7 @@ Approach - this is similar to combination sum but diff is that numbers are not u
 we can't chose same number and we have to find unique combinations.
 
 Tc - 2 ** len(nums)
-sc - n * 2**len(nums)
+sc - n + 2**len(nums)
 
 """
 

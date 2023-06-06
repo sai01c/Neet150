@@ -4,8 +4,9 @@ https://leetcode.com/problems/palindrome-partitioning/
 Approach: this is another backtracking template problem
 First we check for partition if it satisfies the palindrom, we will do backtracking on next part of string
 
-tc -
-sc - 
+tc - n * n**n but for tighter bound refer this
+https://stackoverflow.com/questions/24591616/whats-the-time-complexity-of-this-algorithm-for-palindrome-partitioning
+sc - n
 
 """
 

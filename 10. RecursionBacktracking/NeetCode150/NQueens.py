@@ -3,7 +3,7 @@ https://leetcode.com/problems/n-queens/
 
 Approach - regular backtracing template. First we place the queen in each row and make the possible options for next row
 
-tc - n**n
+tc - n!
 sc - n**2
 """
 

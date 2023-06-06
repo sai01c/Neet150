@@ -4,7 +4,7 @@ https://leetcode.com/problems/generate-parentheses/
 Approach: this is a backtracking problem. We'll have a base case and list out all the possible cases. 
 
 tc - 2** 2n. 2n because for input n we will have 2n characters
-sc - n * 2**2n
+sc - n + 2**2n
 """
 
 class Solution:

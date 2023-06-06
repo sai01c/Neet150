@@ -6,7 +6,7 @@ For every position we will have 3 choices initially
 then next element we will have 2 and then last element we only have 1 choice.
 
 tc - n!
-sc - n * n!
+sc - n + n!
 
 """
 
