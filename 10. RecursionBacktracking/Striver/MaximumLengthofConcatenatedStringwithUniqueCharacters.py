@@ -1,6 +1,9 @@
 """
 https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/
 
+tc - n**n
+sc - n
+
 """
 class Solution:
     def maxLength(self, arr: List[str]) -> int:
@@ -9,6 +12,8 @@ class Solution:
             if i >= len(arr):
                 res.append(len(curr))
                 return
+            #this line is very imp - imagine a case where we might not reach the end of
+            #the array but there will be a unique string at index less than len(arr)
             res.append(len(curr))
             for j in range(i, len(arr)):
                 #char in arr[j] not in curr

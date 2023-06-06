@@ -1,6 +1,8 @@
 """
 https://leetcode.com/problems/binary-tree-paths/
 
+tc - O(n) for skewed binary tree
+sc - O(n) recursive call stack
 """
 
 class Solution:

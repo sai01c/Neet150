@@ -1,6 +1,8 @@
 """
 https://leetcode.com/problems/restore-ip-addresses/
 
+tc - constant
+sc - n
 """
 
 class Solution:

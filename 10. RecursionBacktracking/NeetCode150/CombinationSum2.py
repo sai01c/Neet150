@@ -4,8 +4,8 @@ https://leetcode.com/problems/combination-sum-ii/
 Approach - this is similar to combination sum but diff is that numbers are not unique. 
 we can't chose same number and we have to find unique combinations.
 
-Tc - (2^len(nums)) * n
-sc - n
+Tc - 2 ** len(nums)
+sc - n * 2**len(nums)
 
 """
 
@@ -31,6 +31,8 @@ class Solution:
             #second case - don't add element
             subset.pop()
             total -= nums[i]
+            #we are doing this at the second case because we want to make sure
+            #this will not contain any of the repeating element
             while i+1 < len(nums) and nums[i] == nums[i+1]: #if same element shift the pointer
                 i += 1
             backtrack(i+1, total, subset)

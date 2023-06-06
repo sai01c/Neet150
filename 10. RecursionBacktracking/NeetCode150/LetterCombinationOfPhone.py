@@ -3,8 +3,8 @@ https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
 Approach - this is another backtracking template because we have to make decision at each level.
  
-tc 
-sc 
+tc - 4 ** len(digits). 4 because for digits 7 and 9 we will have 4 char's.
+sc - n * 4**n
 """
 
 class Solution:

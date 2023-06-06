@@ -1,5 +1,8 @@
 """
 https://leetcode.com/problems/find-unique-binary-string/
+
+tc - 2**n 
+sc - n
 """
 
 class Solution:

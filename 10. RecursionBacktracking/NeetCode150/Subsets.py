@@ -4,8 +4,8 @@ https://leetcode.com/problems/subsets/
 Approach - ths is backtracking problem, so draw a state-space tree. 
 array contains unique elements so our subsets will also be unique.
 
-Tc: (2^ len(nums)) * n 
-Sc- 
+Tc: 2 ** len(nums)
+Sc- n * 2**len(nums)
 """
 
 class Solution:

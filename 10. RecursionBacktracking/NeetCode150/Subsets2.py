@@ -6,8 +6,8 @@ But, here array is not unique. And, we need to find unique subsets.
 To avoid duplicate elements first we sort the array and then we check 
 for i+1 == i if yes then shift the pointer
 
-tc - n * (2^n)
-sc- n
+tc - 2**n
+sc- n * 2**n
 
 """
 

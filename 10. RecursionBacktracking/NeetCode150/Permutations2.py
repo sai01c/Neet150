@@ -1,6 +1,8 @@
 """
 https://leetcode.com/problems/permutations-ii/
 
+tc - less than n!
+sc - n * n!
 """
 
 class Solution:

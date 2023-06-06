@@ -5,8 +5,8 @@ Approach - we need to create permutations of the array [1,2,3].
 For every position we will have 3 choices initially
 then next element we will have 2 and then last element we only have 1 choice.
 
-tc - 
-sc - 
+tc - n!
+sc - n * n!
 
 """
 

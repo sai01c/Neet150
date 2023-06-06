@@ -3,54 +3,25 @@ https://leetcode.com/problems/generate-parentheses/
 
 Approach: this is a backtracking problem. We'll have a base case and list out all the possible cases. 
 
-Revise this problem again with backtracking concept. 
-this is Nick white solution. Neetcode used stack with backtracking. 
-
-TODO - Backtracking
+tc - 2** 2n. 2n because for input n we will have 2n characters
+sc - n * 2**2n
 """
 
-
-from logging.config import valid_ident
-
-
-def generateParenthesis(self, n: int):
-    res = []
-
-    def backtrack(output_array, curr_string, openCount, closeCount, maxCount):
-        if len(curr_string) == maxCount * 2:
-            output_array.append(curr_string)
-        if openCount < maxCount:
-            backtrack(output_array, curr_string +
-                      "(", openCount + 1, closeCount, maxCount)
-        if closeCount < openCount:
-            backtrack(output_array, curr_string + ")",
-                      openCount, closeCount + 1, maxCount)
-
-    backtrack(res, "", 0, 0, n)
-    return res
-
-
-"""
-# n = 2 
-backtrack(res, "", 0, 0, 2)
-0 < 2 => backtrack(output, "(", 1, 0, 2)
-            => 1 < 2 => backtrack(output, "((", 2, 0, 2)
-            => 0 < 1 => backtrack
-                    backtrack(output, "(()", 2, 1, 2)
-                        => backtrack(output, "(())", 2, 2, 2)
-
-"""
-
-
-"""# n = 1 res = ["()"]
-backtrack(res, "", 0, 0, 1)
-
-curr_string = ""
-open = 0
-maxCount = 1
-close = 0
-
-0 < 1 = > (output, "(", 1, 0, 1)
-        = > (output, "()", 1, 1, 1)
-            => len("()") = 2: ["()"]
-"""
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        res = []
+        
+        def backtrack(curr, l, r):
+            if len(curr) == 2*n and l==r:
+                res.append(curr)
+                return
+            if l > n or r> n or r > l:
+                return
+            if len(curr) > 2*n:
+                return
+            
+            backtrack(curr+"(", l+1, r)
+            backtrack(curr+")", l, r+1)
+        
+        backtrack("", 0, 0)
+        return res
