@@ -14,12 +14,11 @@ even Neetcode said it is next level
 
 """
 
-def func(nums):
-    dp = [1] * len(nums)
-    for i in range(len(nums)-1, -1, -1): 
-        for j in range(i+1, len(nums)): #check for all possible j's for i
-            if nums[i] < nums[j]: #we want increasing from i to j
-                dp[i] = max(dp[i], 1+dp[j]) 
-    return max(dp)
-
-
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        dp = [1] * len(nums)
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[j] > nums[i]:
+                    dp[j] = max(dp[j], 1+dp[i])
+        return max(dp)
