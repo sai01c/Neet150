@@ -11,10 +11,12 @@ Sc: O(1)
 """
 class HouseRobber():
     def houseRobber1(self, nums):
-        prev2, prev = 0, 0
+        a = 0
+        b = 0
         for num in nums:
-            curr = max(prev2 + num, prev)
-            prev2 = prev
-            prev = curr
+            c = max(c, a+b)
+            a = b
+            b = c
+        return c
 
-        return curr
+        
