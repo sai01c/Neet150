@@ -1,5 +1,7 @@
 """
 https://leetcode.com/problems/equal-row-and-column-pairs/
+
+to get the column matrix, just you matrix[c][r]
 """
 
 class Solution:
@@ -7,15 +9,16 @@ class Solution:
         dic = defaultdict(int)
         for row in grid:
             dic[tuple(row)] += 1
-        
-        cols = len(grid[0])
-        rows = len(grid)
-        res = 0
-        
-        for c in range(cols):
+        cols = []
+        N = len(grid)
+        for r in range(N):
             temp = []
-            for r in range(rows):
-                temp.append(grid[r][c])
-            res += dic[tuple(temp)]
-        
+            for c in range(N):
+                temp.append(grid[c][r])
+            cols.append(temp)
+        res = 0
+        for col in cols:
+            if tuple(col) in dic:
+                res += dic[tuple(col)]
         return res
+                
