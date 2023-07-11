@@ -38,4 +38,38 @@ class Solution:
             return res
         return dfs(target.val, 0)
 
+
+class Solution:
+    def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
+        dic = defaultdict(list)
+        q = collections.deque()
+        q.append(root)
+        
+        while q:
+            node = q.popleft()
+            if node:
+                if node.left:
+                    dic[node.left.val].append(node.val)
+                    dic[node.val].append(node.left.val)
+                    q.append(node.left)
+                if node.right:
+                    dic[node.right.val].append(node.val)
+                    dic[node.val].append(node.right.val)
+                    q.append(node.right)
+        visit = set()
+        q.append((target.val, 0))
+        visit.add(target.val)
+        res = []
+        
+        while q:
+            for i in range(len(q)):
+                node, dist = q.popleft()
+                if dist == k:
+                    res.append(node)
+                for nei in dic[node]:
+                    if nei not in visit:
+                        q.append((nei, dist+1))
+                        visit.add(nei)
+            
+        return res
                 
