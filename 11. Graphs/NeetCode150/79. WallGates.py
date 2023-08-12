@@ -29,7 +29,7 @@ def wallGates(grid):
     while q:
         for i in range(len(q)):
             r, c = q.popleft()
-            grid[r][c] = dist #we are doing it in-place so mark dist to this cell
+            grid[r][c] = dist #we are doing it in-place so mark dist to this cell.
             for dr, dc in directions:
                 nr, nc = r+dr, c+dc
                 if (nr in range(rows) and 

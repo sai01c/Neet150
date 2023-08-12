@@ -46,3 +46,49 @@ class Solution:
             prev = curr
             curr = temp
         return prev
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        s1, s2 = [], []
+        curr = l1
+        while curr:
+            s1.append(curr.val)
+            curr = curr.next
+        curr = l2
+        while curr:
+            s2.append(curr.val)
+            curr = curr.next
+        dummy = ListNode()
+        prev = dummy
+        carry = 0
+        while s1 or s2 or carry:
+            total = 0
+            if s1:
+                total += s1.pop()
+            if s2:
+                total += s2.pop()
+            if carry:
+                total += carry
+            carry = total // 10
+            total = total % 10
+            prev.next = ListNode(total)
+            prev = prev.next
+        
+        def helper(head):
+            prev = None
+            curr = head
+            while curr:
+                temp = curr.next
+                curr.next = prev
+                prev = curr
+                curr = temp
+            return prev
+        
+        return helper(dummy.next)
+            
+
+            
