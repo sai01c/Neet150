@@ -24,21 +24,23 @@ Sc: O(n) arrays
 
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
-        left = 0
-        c1 = defaultdict(int)
-        c2 = defaultdict(int)
-        for char in s1:
-            c1[char] += 1
-        for right in range(len(s2)):
-            sub = s2[left:right+1]
-            c2[s2[right]] += 1
+        dic1 = Counter(s1)
+        dic2 = {}
+        l = 0
+        for r in range(len(s2)):
+            val = s2[r]
+            if val in dic2:
+                dic2[val] += 1
+            else:
+                dic2[val] = 1
+            length = r - l + 1
             
-            if c1 == c2:
-                return True
-            print(c2)
-            if len(sub) == len(s1):
-                c2[s2[left]] -= 1
-                if c2[s2[left]] == 0: del c2[s2[left]]
-                left += 1
-                
+            if length == len(s1):
+                if dic1 == dic2:
+                    return True
+                dic2[s2[l]] -= 1
+                if dic2[s2[l]] == 0:
+                    del dic2[s2[l]]
+                l += 1
         return False
+            
