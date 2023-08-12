@@ -26,23 +26,18 @@ from ast import List
 
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
-        pc = {}
-        for i in p:
-            pc[i] = pc.get(i, 0) + 1
-        print("pc", pc)   
+        dicP = Counter(p)
+        dicS = defaultdict(int)
         res = []
-        sc = {}
-        left = 0
-        for right in range(len(s)):
-            sub = s[left: right + 1]
-            sc[s[right]] = sc.get(s[right], 0) + 1
-            print("sc", sc)
-            if sc == pc:
-                res.append(left)
+        l = 0
+        for r in range(len(s)):
+            dicS[s[r]] += 1
+            sub = s[l:r+1]
+            if len(sub) == len(p) and dicS == dicP:
+                res.append(l)
             if len(sub) >= len(p):
-                sc[s[left]] -= 1
-                if sc[s[left]] == 0: del sc[s[left]]
-                left += 1
-        
+                dicS[s[l]] -= 1
+                if dicS[s[l]] == 0:
+                    del dicS[s[l]]
+                l += 1
         return res
-
