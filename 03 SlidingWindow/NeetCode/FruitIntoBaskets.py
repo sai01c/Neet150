@@ -9,6 +9,9 @@ Because you are only allowed to have 2 types. Handle edge case if count is 0, th
 Now increase the left pointer. 
 For each iteration, create a variable = 0 and add the two values from the dict. Now, use max condition to get the maximum of all the iterations.
 
+we can't use set because while removing we may remove the fruit but l can't be pointing at the right fruit
+eg - [3,3,3,1,2,1,1,2,3,3,4]
+
 Tc: 2n
 Sc: O(n) 
 
@@ -27,10 +30,6 @@ class Solution:
                     del dic[fruits[l]]
                 l += 1
             
-            temp = 0
-            for v in dic.values(): #this is O(2) constant
-                temp += v
-            
-            res = max(res, temp)
+            res = max(res, r-l+1)
         
         return res

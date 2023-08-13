@@ -34,7 +34,7 @@ def slidingWindowMaximum2(nums, k):
             Input [1,-1] 1 Output [1,1] Expected [1,-1]
 """
 
-        if right+1 > k:  # we will be shifting the pointer every iteration so every window
+        if right-left+1 > k:  # we will be shifting the pointer every iteration so every window
             left += 1
             res.append(nums[indQ[0]])
     return res

@@ -1,20 +1,6 @@
 """
 https://leetcode.com/problems/valid-palindrome-ii/
 
-Example 1:
-
-Input: s = "aba"
-Output: true
-Example 2:
-
-Input: s = "abca"
-Output: true
-Explanation: You could delete the character 'c'.
-Example 3:
-
-Input: s = "abc"
-Output: false
-
 first define palindrome method- have two pointers left and right. 
 check their values and move them correspondingly. 
 
