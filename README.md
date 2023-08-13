@@ -83,3 +83,4 @@ array and use index as frequency. This will eliminate sorting the frequency. Eg:
 - In dic, we can only have immutable data type as keys - int , string , tuple
 - If we want to remove adjacent elements always consider stack first
 - If paranthesis problems, always do stack first
+- In sliding window, to reduce from n**2 to n use dict, set or queue. 

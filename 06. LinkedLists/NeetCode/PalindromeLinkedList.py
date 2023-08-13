@@ -12,31 +12,23 @@ sc - 1
 
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        dummy = ListNode()
-        dummy.next = head
-        first = head
-        #go to middle using slow and fast pointers
-        slow = dummy
+        slow = head
         fast = head
-        while fast and fast.next:
+        while slow and fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        second = slow.next
-        slow.next = None
-        #reverse the second half now
+        first = head
+        curr = slow
         prev = None
-        while second:
-            temp = second.next
-            second.next = prev
-            prev = second
-            second = temp
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
         second = prev
-        
-        #now compare first and second lists if they are equal
         while first and second:
             if first.val != second.val:
                 return False
             first = first.next
             second = second.next
         return True
-        
