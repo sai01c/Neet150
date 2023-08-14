@@ -11,30 +11,16 @@ sc - n
 class Solution:
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         nums = []
+        dummy = ListNode(0, head)
         curr = head
-
         while curr:
-            value = curr.val
-            nums.append(value)
+            nums.append(curr.val)
             curr = curr.next
-        nums.sort()
-        
+        curr2 = head
         i = 0
-        dummy = ListNode(None)
-        prev = dummy
-        
-        while i < len(nums):
-            #create first and second nodes, check if second is in bounce
-            first = ListNode(nums[i])
-            if i + 1 < len(nums):
-                second = ListNode(nums[i+1])
-            else:
-                second = None
-            #join the nodes
-            prev.next = first
-            first.next = second
-            #increase the pointer and update prev node
-            i += 2
-            prev = second
-        
+        nums.sort()
+        while curr2 and i < len(nums):
+            curr2.val = nums[i]
+            i += 1
+            curr2 = curr2.next
         return dummy.next
