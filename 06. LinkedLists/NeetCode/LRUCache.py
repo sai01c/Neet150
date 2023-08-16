@@ -51,7 +51,6 @@ class LRUCache:
         pre.next = nxt
         nxt.prev = pre
 
-        
     def put(self, key: int, value: int) -> None:
         if key in self.dic: #if key is there, we delete that Node
             self.delete(self.dic[key])
@@ -62,7 +61,7 @@ class LRUCache:
             lru = self.left.next
             self.delete(lru) #delete from linked list
             del self.dic[lru.key] #delete from dict
-
+            #here we are accessing key from node that's the reason we need both node and value in node
         
 
 

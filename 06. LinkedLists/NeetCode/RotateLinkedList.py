@@ -59,37 +59,30 @@ sc - 1
 
 class Solution:
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        if not head:
-            return None
+        if not head: return None
+        slow = head
+        fast = head
         curr = head
-        total = 0
-        #find total nodes
+        
+        length = 0
         while curr:
-            total += 1
             curr = curr.next
+            length += 1
         
-        #find effective K
-        k = k % total
-        if k == 0:
-            return head
+        k = k % length
+        if k == 0: return head
         
-        #find pivot node
-        curr = head
-        temp = total - k
-        while curr and temp > 1:
-            curr = curr.next
-            temp -= 1
+        while k:
+            fast = fast.next
+            k -= 1
         
-        groupNext = curr.next
-        curr.next = None
-        
-        #move second to last node and shift the pointers
-        first = head
-        second = groupNext
-        while second.next:
-            second = second.next
-        second.next = first
-        
-        return groupNext
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next
+
+        second = slow.next
+        slow.next = None
+        fast.next = head
+        return second
         
         

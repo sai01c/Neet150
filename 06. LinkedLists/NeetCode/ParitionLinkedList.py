@@ -30,7 +30,7 @@ class Solution:
                 prev2 = prev2.next
             curr = curr.next
         
-        prev2.next = None    
+        prev2.next = None #write on paper to understand this    
         prev.next = dummy2.next
         return dummy.next
         

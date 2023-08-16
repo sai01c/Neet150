@@ -84,3 +84,11 @@ array and use index as frequency. This will eliminate sorting the frequency. Eg:
 - If we want to remove adjacent elements always consider stack first
 - If paranthesis problems, always do stack first
 - In sliding window, to reduce from n**2 to n use dict, set or queue. 
+- Constructor for Doubly linked list - 
+```
+class ListNode: 
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+        self.prev = None
+```
