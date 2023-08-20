@@ -42,19 +42,7 @@ class MyLinkedList:
         prevNode.next = node
         self.right.prev = node
 
-    def addAtIndex(self, index: int, val: int) -> None:
-        nextNode = self.left.next
-        while curr and index > 0:
-            index -= 1
-            nextNode = nextNode.next
-        if nextNode and index == 0:
-            node = ListNode(val)
-            prevNode = nextNode.prev
-            node.next = nextNode
-            node.prev = prevNode
-            nextNode.prev = node
-            prevNode.next = node
-      
+    
     def deleteAtIndex(self, index: int) -> None:
         node = self.left.next
         while node and index > 0:
@@ -65,4 +53,4 @@ class MyLinkedList:
             node.next.prev = node.prev
             
             
-
+print(ord('z')- ord('a'))
