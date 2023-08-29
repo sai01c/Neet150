@@ -47,6 +47,34 @@ class Solution:
         
         return res
                 
-                
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def goodNodes(self, root: TreeNode) -> int:
+        q = collections.deque()
+        q.append((root, root.val))
+        res = 1
+        while q:
+            for i in range(len(q)):
+                node, curr = q.popleft()
+                if node:
+                    if node.left:
+                        if node.left.val >= curr:
+                            res += 1
+                            q.append((node.left, node.left.val))
+                        else:
+                            q.append((node.left, curr))
+                    
+                    if node.right:
+                        if node.right.val >= curr:
+                            res += 1
+                            q.append((node.right, node.right.val))
+                        else:
+                            q.append((node.right, curr))
+        return res              
                 
         
