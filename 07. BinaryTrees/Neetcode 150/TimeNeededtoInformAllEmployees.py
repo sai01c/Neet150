@@ -28,4 +28,5 @@ class Solution:
                 for nei, neiDist in dic[node]:
                     if nei not in visit:
                         q.append((nei, curr+neiDist))
+                        visit.add(nei)
         return ans
