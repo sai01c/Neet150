@@ -10,7 +10,32 @@ else append it to res
 tc
 sc
 """
-
+class Solution:
+    def reorganizeString(self, s: str) -> str:
+        count = Counter(s)
+        heap = []
+        reserve = []
+        res = ""
+        prev = -1
+        for k, v in count.items():
+            heapq.heappush(heap, (-v, k))
+        while heap or reserve:
+            while reserve and prev != reserve[0][1]:
+                rf, rc = heapq.heappop(reserve)
+                heapq.heappush(heap, (rf, rc))
+            
+            if not heap: return ""    
+            fre, char = heapq.heappop(heap)
+            if char == prev:
+                heapq.heappush(reserve, (fre, char))
+            else:
+                res += char
+                prev = char
+                fre += 1
+                if fre < 0:
+                    heapq.heappush(heap, (fre, char))
+        return res
+            
 class Solution:
     def reorganizeString(self, s: str) -> str:
         dic = Counter(s)
@@ -41,4 +66,5 @@ class Solution:
         
         return res
             
-            
+
+         
