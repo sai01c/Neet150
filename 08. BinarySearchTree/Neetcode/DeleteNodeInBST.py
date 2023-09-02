@@ -5,7 +5,7 @@ Approach - iterate using BST property and after you found the node.
 you need to replace this node visit right subtree and go as left as possible. Now, place
 this node val in the given key place
 
-TODO
+trim bst and delete node bst are very similar
 
 tc
 sc
