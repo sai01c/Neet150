@@ -34,3 +34,26 @@ def combinationSum(candidates, target):
 
     backtrack([], 0, 0)
     return res
+
+class Solution:
+    def combinationSum(self, nums: List[int], target: int) -> List[List[int]]:
+        res = []
+        sub = []
+        
+        def backtrack(i, curr):
+            if curr == target:
+                res.append(sub.copy())
+                return
+            if curr > target:
+                return
+            if i >= len(nums):
+                return
+
+            for j in range(i, len(nums)):
+                sub.append(nums[j])
+                backtrack(j, curr+nums[j])
+                sub.pop()
+                
+        backtrack(0, 0)
+        return res
+            

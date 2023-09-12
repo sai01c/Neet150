@@ -32,6 +32,4 @@ class Solution:
                     visit.add(node)
                     if (conn, node) not in edges:
                         res += 1
-
-
         return res

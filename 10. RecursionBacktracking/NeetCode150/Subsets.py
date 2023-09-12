@@ -28,3 +28,20 @@ class Solution:
 
         backtrack(0)
         return res
+    
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        sub = []
+        def backtrack(i):
+            if len(sub) == k:
+                res.append(sub.copy())
+                return
+            for j in range(i, len(nums)):
+                sub.append(nums[j])
+                backtrack(j+1)
+                sub.pop()
+        
+        for k in range(len(nums)+1):
+            backtrack(0)
+        return res

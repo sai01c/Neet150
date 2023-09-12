@@ -1,6 +1,7 @@
 """
 https://leetcode.com/problems/design-tic-tac-toe/
 
+instead of storing as lists, you can add +1 if player 1 and -1 if player 2 check if sum is +n or -n
 """
 
 class TicTacToe:
@@ -29,7 +30,3 @@ class TicTacToe:
         
         return 0
         
-
-# Your TicTacToe object will be instantiated and called as such:
-# obj = TicTacToe(n)
-# param_1 = obj.move(row,col,player)

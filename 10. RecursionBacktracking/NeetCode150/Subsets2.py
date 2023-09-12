@@ -33,3 +33,19 @@ def subsetsWithDup(nums):
 
     backtrack(0)
     return res
+
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        sub = []
+        nums.sort()
+        def backtrack(i):
+            res.append(sub.copy())
+            for j in range(i, len(nums)):
+                if i != j and nums[j] == nums[j-1]:
+                    continue
+                sub.append(nums[j])
+                backtrack(j+1)
+                sub.pop()
+        backtrack(0)
+        return res
