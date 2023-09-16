@@ -1,4 +1,5 @@
 """
+https://leetcode.com/problems/binary-tree-vertical-order-traversal/
 https://www.youtube.com/watch?v=xs_deEJXflw&ab_channel=SaiAnishMalla
 
 Approach: 
@@ -17,25 +18,30 @@ Sc:
 """
 
 
-def verticalTraversal(root):
-    vertical = 0
-    level = 0
-    dic = {}
-    helper(root, vertical, level, dic)
-    res = []
-    for vertical in sorted(dic.keys()):
-        column = []
-        for level, val in sorted(dic[vertical]):
-            column.append(val)
-        res.append(column)
-    return res
-
-
-def helper(root, vertical, level, dic):
-    if vertical not in dic:
-        dic[vertical] = [(level, dic)]
-    else:
-        dic[vertical].append([(level, dic)])
-
-    helper(root.left, vertical - 1, level + 1, dic)
-    helper(root.right, vertical + 1, level + 1, dic)
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def verticalOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        dic = defaultdict(list)
+        
+        def helper(root, level, vertical):
+            if not root:
+                return
+            dic[vertical].append((level, root.val))
+            helper(root.left, level+1, vertical-1)
+            helper(root.right, level+1, vertical+1)
+        
+        helper(root, 0, 0)
+        res = []
+        for vertical in sorted(dic.keys()):
+            temp = []
+            sortList = sorted(dic[vertical], key = lambda x: x[0])
+            for level, val in sortList:
+                temp.append(val)
+            if temp:
+                res.append(temp)
+        return res
