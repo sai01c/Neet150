@@ -92,3 +92,4 @@ class ListNode:
         self.next = None
         self.prev = None
 ```
+- For backtracking to avoid TLE - @lru_cache(maxsize = None)
