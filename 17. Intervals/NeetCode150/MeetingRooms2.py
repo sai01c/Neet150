@@ -1,6 +1,8 @@
 """
 https://www.lintcode.com/problem/919/description
 
+https://leetcode.com/problems/meeting-rooms-ii/
+
 Only need one meeting room
 
 Approach- create two lists for start times and end times. sort them. 
@@ -30,3 +32,17 @@ def confRooms(intervals):
 
 print(confRooms([(0, 30), (5, 10), (15, 20)]))
 print(confRooms([(2, 7)]))
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        heap = []
+        intervals.sort()
+        for s, e in intervals:
+            if not heap:
+                heapq.heappush(heap, e)
+            elif heap[0] > e:
+                heapq.heappush(heap, e)
+            else:
+                heapq.heappop(heap)
+                heapq.heappush(heap, e)
+        return len(heap)

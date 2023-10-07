@@ -34,3 +34,20 @@ class Solution:
                 if (matrix[r][c] <= mid):
                     res += 1
         return res
+
+class Solution:
+    def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
+        heap = []
+        rows = len(matrix)
+        cols = len(matrix[0])
+        
+        for r in range(rows):
+            heapq.heappush(heap, (matrix[r][0], r, 0))
+        
+        for i in range(k):
+            ele, r, c = heapq.heappop(heap)
+            
+            if c+1 < cols:
+                heapq.heappush(heap, (matrix[r][c+1], r, c+1))
+        
+        return ele

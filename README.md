@@ -87,9 +87,11 @@ array and use index as frequency. This will eliminate sorting the frequency. Eg:
 - Constructor for Doubly linked list - 
 ```
 class ListNode: 
-    def __init__(self, val):
+    def __init__(self, key, val):
+        self.key = key
         self.val = val
         self.next = None
         self.prev = None
 ```
+
 - For backtracking to avoid TLE - @lru_cache(maxsize = None)
