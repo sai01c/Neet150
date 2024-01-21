@@ -50,3 +50,25 @@ print(d) #defaultdict(<class 'list'>, {'key': [2,2]})
 - deleting at end O(1)
 - Searching O(n)
 - Access O(1)
+
+
+
+### Hashing
+
+- Constant time search/lookup.
+- value => hash-value
+- we can search for the value in linear time by indexing using the hash-value.
+
+### Collisions
+
+- Same hash-value for 2 different input values.
+
+1. Change the hash-function
+2. Store multiple hash-values for a single input value using buckets and create new hash-function for each bucket.
+
+- Both approaches are not ideal.
+- Load Factor = number of inputs/ number of buckets.
+
+### StringKeys
+
+-
