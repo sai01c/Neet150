@@ -5,32 +5,32 @@ https://leetcode.com/problems/longest-common-prefix/
 
 class TrieNode:
     def __init__(self):
-        self.dic = {}
+        self.child = {}
         self.end = False
-    
-    def add(self, word):
-        curr = self
+        
+class Solution:
+    def __init__(self):
+        self.root = TrieNode()
+        
+    def addWord(self, word):
+        curr = self.root
         for char in word:
-            if char not in curr.dic:
-                curr.dic[char] = TrieNode()
-            curr = curr.dic[char]
+            if char not in curr.child:
+                curr.child[char] = TrieNode()
+            curr = curr.child[char]
         curr.end = True
         
-            
-class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        root = TrieNode()
         for word in strs:
-            root.add(word)
-        curr = root
-        res =  ""
-        while curr and len(curr.dic) == 1 and curr.end != True:
-            for c in curr.dic:
-                res += c
-                curr = curr.dic[c]
-
+            self.addWord(word)
+        res = ''
+        curr = self.root
+        while curr and len(curr.child) == 1 and curr.end != True:
+            for char in curr.child:
+                res += char
+                curr = curr.child[char]
         return res
-            
+        
         
         
         

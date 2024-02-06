@@ -37,6 +37,6 @@ def func(strs):
     return dic.values()
 
 """
-Tc: O(26n)
+Tc: O(m * n)
 Sc: O(n)
 """
