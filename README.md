@@ -1,6 +1,7 @@
 # Important Links - 
 
 - [Coding Ninjas - Guided Paths for Data Structures & Algorithms](https://www.codingninjas.com/codestudio/guided-paths/data-structures-algorithms)
+- [Striver Sheet](https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/)
 - [14 Patterns to Ace Any Coding Interview Question](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
 - [List of Common LeetCode Questions with 7 Offers](https://www.teamblind.com/post/7-offers---list-of-common-leetcode-questions-hehCM2L2)
 - [Educative.io - Grokking the Coding Interview](https://www.educative.io/courses/grokking-the-coding-interview?ref=hackernoon.com&source=post_page---------------------------)
